@@ -7,39 +7,39 @@
 - `@eunchurn/windrose-chart`
 
 
-## 개발환경
+## Development
 
-### lerna 환경 설치
+### lerna install
 
 ```
 yarn install
 yarn bootstrap
 ```
 
-### CRA 환경(개발 테스트): `packages/app`
+### CRA environment: `packages/app`
 
-React App 실행
+run React App
 
 ```
 yarn start
 ```
 
-### Package 환경(컴포넌트): `packages/{component_name}...`
+### Package environment: `packages/{component_name}...`
 
-Component 빌드
+Component build with watching
 
 ```
 yarn watch
 ```
 
-### 의존성 모듈 추가
+### Add deps.
 
 ```
 yarn lerna:add {external_package_name} --scope={package-name}
 ```
 
-### 배포
+### Deployment
 
-- Major 버전을 올리면서 배포: `yarn lerna:publish major`
-- Minor 버전을 올리면서 배포: `yarn lerna:publish minor`
-- Patch 버전을 올리면서 배포: `yarn lerna:publish patch`
+- Major deployment: `yarn lerna:publish major`
+- Minor deployment: `yarn lerna:publish minor`
+- Patch deployment: `yarn lerna:publish patch`
