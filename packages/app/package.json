@@ -48,7 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.9",
-    "ts-jest": "^26.5.5"
+    "@types/styled-components": "5.1.9",
+    "ts-jest": "26.5.5"
   }
 }
