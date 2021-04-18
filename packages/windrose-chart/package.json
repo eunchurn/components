@@ -1,0 +1,44 @@
+{
+  "name": "@eunchurn/windrose-chart",
+  "version": "1.0.0",
+  "private": false,
+  "files": [
+    "lib"
+  ],
+  "author": "Eunchurn Park <eunchurn.park@gmail.com>",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eunchurn/components.git",
+    "directory": "package/exelbid"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/d3": "6.3.0",
+    "@types/jest": "26.0.22",
+    "@types/lodash": "4.14.168",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "standard-version": "9.2.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "gitHead": "bec0f930f1ef420ae1ebaef6c074ff5d606ab1c7",
+  "dependencies": {
+    "d3": "^6.7.0",
+    "lodash": "^4.17.21",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-tooltip": "^4.2.17",
+    "styled-components": "^5.2.3"
+  }
+}
