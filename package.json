@@ -35,15 +35,20 @@
   },
   "devDependencies": {
     "@monorepo-utils/collect-changelog": "2.4.4",
-    "@testing-library/jest-dom": "5.11.10",
-    "@testing-library/react": "11.2.6",
-    "@testing-library/user-event": "13.1.4",
-    "@testing-library/react-hooks": "5.1.1",
-    "@types/enzyme": "3.10.8",
-    "@wojtekmaj/enzyme-adapter-react-17": "0.6.1",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@testing-library/user-event": "13.2.0",
+    "@testing-library/react-hooks": "7.0.1",
+    "@types/enzyme": "3.10.9",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.6.3",
     "enzyme": "3.11.0",
     "enzyme-to-json": "3.6.2",
-    "lerna": "4.0.0"
+    "jest": "27.0.6",
+    "lerna": "4.0.0",
+    "ts-jest": "27.0.4"
+  },
+  "resolutions": {
+    "jest": "26.6.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

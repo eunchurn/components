@@ -1,19 +1,10 @@
-export declare const data: {
-    subject: string;
-    coreCompetency: string;
-    survey: number;
-    color: string;
-}[];
+import { DataType } from "./Types";
+export declare const data: DataType[];
 export declare const DefaultProps: {
     width: number;
     height: number;
-    dataMax: number;
-    data: {
-        subject: string;
-        coreCompetency: string;
-        survey: number;
-        color: string;
-    }[];
+    dataMax: string;
+    chartData: DataType[];
     columns: string[];
     columnsColor: string[];
     angles: string[];

@@ -1,12 +1,8 @@
 import * as React from "react";
-import {
-  render,
-  screen,
-  fireEvent,
-  waitFor,
-} from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Chart from "../../index";
+import { Chart } from "../../index";
+import { data } from "../DefaultProps";
 import "jest-styled-components";
 
 jest.mock("react-tooltip/node_modules/uuid", () => ({
@@ -15,12 +11,12 @@ jest.mock("react-tooltip/node_modules/uuid", () => ({
 
 describe("<Chart />", () => {
   it("matches snapshot", () => {
-    const utils = render(<Chart />);
+    const utils = render(<Chart chartData={data} />);
     expect(utils.container).toMatchSnapshot();
   });
   it("should matches onmouseover snapshot", async () => {
     try {
-      render(<Chart />);
+      render(<Chart chartData={data} />);
       // console.log("before", screen.getByTestId("test_1"));
       // console.log("beforeScreen", screen);
       fireEvent.mouseOver(screen.getByTestId("test_1"));

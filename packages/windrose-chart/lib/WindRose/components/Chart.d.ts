@@ -1,15 +1,10 @@
 /// <reference types="react" />
-import { PropType } from "./Types";
+import { PropType, DataType } from "./Types";
 export declare function Chart(props: PropType): JSX.Element;
 export declare namespace Chart {
     var defaultProps: {
-        data: {
-            subject: string;
-            coreCompetency: string;
-            survey: number;
-            color: string;
-        }[];
-        dataMax: number;
+        chartData: DataType[];
+        dataMax: string;
         angles: string[];
         columns: string[];
         columnsColor: string[];

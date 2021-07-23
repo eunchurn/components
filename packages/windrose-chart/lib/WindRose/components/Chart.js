@@ -38,15 +38,10 @@ export function Chart(props) {
         xGroup.domain(columns.map(function (d) { return d; }));
         y.domain([
             0,
-            d3.max(data, function (_a) {
-                var total = _a.total;
-                return total;
-            }) > dataMax
-                ? d3.max(data, function (_a) {
-                    var total = _a.total;
-                    return total;
-                })
-                : dataMax,
+            dataMax,
+            // (d3.max(data, ({ total }) => total) as number) > dataMax
+            //   ? (d3.max(data, ({ total }) => total) as number)
+            //   : dataMax,
         ]);
         angle.domain([0, d3.max(data, function (_, i) { return i + 1; })]);
         radius.domain([0, d3.max(data, function () { return 0; })]);
@@ -60,7 +55,13 @@ export function Chart(props) {
             .endAngle(function (_d, i) { return Number(x(angles[i])) + x.bandwidth(); })
             .padAngle(0.0)
             .padRadius(innerRadius);
-        var arcParent = g.append("g").selectAll("g").data(stackGen(data)).enter();
+        var arcParent = g
+            .append("g")
+            .selectAll("g")
+            // @ts-ignore
+            .data(stackGen(data))
+            .enter();
+        // @ts-ignore
         var arc = arcParent
             .selectAll("path")
             .data(function (d) { return d; })
@@ -167,9 +168,9 @@ export function Chart(props) {
 }
 export var AxisContainer = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 export var Axis = styled.svg(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  .axis {\n    position: absolute;\n    top: 0;\n    left: 0;\n    stroke: gray;\n  }\n"], ["\n  .axis {\n    position: absolute;\n    top: 0;\n    left: 0;\n    stroke: gray;\n  }\n"])));
-var data = DefaultProps.data, angles = DefaultProps.angles, columns = DefaultProps.columns, columnsColor = DefaultProps.columnsColor, width = DefaultProps.width, height = DefaultProps.height, dataMax = DefaultProps.dataMax, dataKeys = DefaultProps.dataKeys, mouseOverColor = DefaultProps.mouseOverColor, mouseOverTitleColor = DefaultProps.mouseOverTitleColor, mouseOverSurveyColor = DefaultProps.mouseOverSurveyColor;
+var chartData = DefaultProps.chartData, angles = DefaultProps.angles, columns = DefaultProps.columns, columnsColor = DefaultProps.columnsColor, width = DefaultProps.width, height = DefaultProps.height, dataMax = DefaultProps.dataMax, dataKeys = DefaultProps.dataKeys, mouseOverColor = DefaultProps.mouseOverColor, mouseOverTitleColor = DefaultProps.mouseOverTitleColor, mouseOverSurveyColor = DefaultProps.mouseOverSurveyColor;
 Chart.defaultProps = {
-    data: data,
+    chartData: chartData,
     dataMax: dataMax,
     angles: angles,
     columns: columns,

@@ -50,31 +50,26 @@ export declare type Direction = typeof Direction[keyof typeof Direction];
 export declare type DataTypes = {
     [key: string]: number;
 }[];
+declare type Angle = "N" | "NNE" | "NE" | "ENE" | "E" | "ESE" | "SE" | "SSE" | "S" | "SSW" | "SW" | "WSW" | "W" | "WNW" | "NW" | "NNW";
+declare type ChartData = {
+    angle: Angle;
+    "0-1": number;
+    "1-2": number;
+    "2-3": number;
+    "3-4": number;
+    "4-5": number;
+    "5-6": number;
+    "6-7": number;
+    "7+": number;
+    total: number;
+};
 export interface ChartPropTypes extends React.HTMLProps<HTMLDivElement> {
-    chartData: {
-        [key: string]: number;
-    }[];
+    chartData: ChartData[];
     columns: string[];
     width: number;
     height: number;
 }
-export declare const ChartDefaultProps: {
-    width: number;
-    height: number;
-    data: {
-        angle: string;
-        "0-1": number;
-        "1-2": number;
-        "2-3": number;
-        "3-4": number;
-        "4-5": number;
-        "5-6": number;
-        "6-7": number;
-        "7+": number;
-        total: number;
-    }[];
-    columns: string[];
-};
+export declare const ChartDefaultProps: ChartPropTypes;
 export interface DataType {
     [key: string]: number | null;
 }

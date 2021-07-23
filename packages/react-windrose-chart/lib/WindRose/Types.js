@@ -19,7 +19,7 @@ var Direction = {
 export var ChartDefaultProps = {
     width: 600,
     height: 600,
-    data: [
+    chartData: [
         {
             angle: "N",
             "0-1": 0.5,
@@ -45,7 +45,7 @@ export var ChartDefaultProps = {
             total: 5.499999999999999,
         },
         {
-            angle: "NE ",
+            angle: "NE",
             "0-1": 0.5,
             "1-2": 1.5,
             "2-3": 1.6,
@@ -69,7 +69,7 @@ export var ChartDefaultProps = {
             total: 4.8,
         },
         {
-            angle: "E  ",
+            angle: "E",
             "0-1": 0.4,
             "1-2": 1.6,
             "2-3": 1,
@@ -93,7 +93,7 @@ export var ChartDefaultProps = {
             total: 2.95,
         },
         {
-            angle: "SE ",
+            angle: "SE",
             "0-1": 0.4,
             "1-2": 1.5,
             "2-3": 0.6,
@@ -117,7 +117,7 @@ export var ChartDefaultProps = {
             total: 4.1,
         },
         {
-            angle: "S  ",
+            angle: "S",
             "0-1": 0.6,
             "1-2": 2.2,
             "2-3": 1.4,
@@ -141,7 +141,7 @@ export var ChartDefaultProps = {
             total: 5.949999999999999,
         },
         {
-            angle: "SW ",
+            angle: "SW",
             "0-1": 0.5,
             "1-2": 2.3,
             "2-3": 1.9,
@@ -165,7 +165,7 @@ export var ChartDefaultProps = {
             total: 7.800000000000001,
         },
         {
-            angle: "W  ",
+            angle: "W",
             "0-1": 0.6,
             "1-2": 2.3,
             "2-3": 1.8,
@@ -189,7 +189,7 @@ export var ChartDefaultProps = {
             total: 10.8,
         },
         {
-            angle: "NW ",
+            angle: "NW",
             "0-1": 0.4,
             "1-2": 2.3,
             "2-3": 1.8,

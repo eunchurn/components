@@ -1,6 +1,6 @@
 import React from "react";
 export interface DataType {
-    [key: string]: number | null;
+    [key: string]: string;
 }
 interface State extends React.HTMLProps<HTMLDivElement> {
     width: number;

@@ -1,7 +1,14 @@
 import React from "react";
 export interface DataType {
-  [key: string]: number | null;
+  [key: string]: string;
 }
+
+// export interface DataType {
+//   subject: string;
+//   coreCompetency: string;
+//   survey: string;
+//   color: string;
+// };
 
 interface State extends React.HTMLProps<HTMLDivElement> {
   width: number;

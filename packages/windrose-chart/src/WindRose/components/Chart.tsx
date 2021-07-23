@@ -50,14 +50,19 @@ export function Chart(props: PropType): JSX.Element {
     xGroup.domain(columns.map((d) => d));
     y.domain([
       0,
-      (d3.max(data, ({ total }) => total) as number) > dataMax
-        ? (d3.max(data, ({ total }) => total) as number)
-        : dataMax,
+      dataMax,
+      // (d3.max(data, ({ total }) => total) as number) > dataMax
+      //   ? (d3.max(data, ({ total }) => total) as number)
+      //   : dataMax,
     ]);
     angle.domain([0, d3.max(data, (_, i): number => i + 1) as number]);
     radius.domain([0, d3.max(data, () => 0) as number]);
     const angleOffset = -360.0 / data.length / 2.0;
-    const stackGen: d3.Stack<any, DataType, string> = d3.stack().keys(dataKeys);
+    const stackGen: d3.Stack<
+      any,
+      { [key: string]: number },
+      string
+    > = d3.stack().keys(dataKeys);
     const arcVal: d3.Arc<SVGPathElement, d3.DefaultArcObject> = d3
       .arc()
       .innerRadius((d) => Number(y(d[0])))
@@ -66,7 +71,13 @@ export function Chart(props: PropType): JSX.Element {
       .endAngle((_d, i) => Number(x(angles[i])) + x.bandwidth())
       .padAngle(0.0)
       .padRadius(innerRadius);
-    const arcParent = g.append("g").selectAll("g").data(stackGen(data)).enter();
+    const arcParent = g
+      .append("g")
+      .selectAll("g")
+      // @ts-ignore
+      .data(stackGen(data))
+      .enter();
+      // @ts-ignore
     const arc: d3.Selection<
       SVGPathElement,
       d3.SeriesPoint<DataType>,
@@ -238,7 +249,7 @@ export const Axis = styled.svg`
 `;
 
 const {
-  data,
+  chartData,
   angles,
   columns,
   columnsColor,
@@ -252,7 +263,7 @@ const {
 } = DefaultProps;
 
 Chart.defaultProps = {
-  data,
+  chartData,
   dataMax,
   angles,
   columns,

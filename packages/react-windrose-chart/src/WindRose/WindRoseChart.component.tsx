@@ -78,10 +78,10 @@ export function Chart(props: ChartPropTypes) {
       // .endAngle((d) => x(String(d.endAngle)) || 0 + x.bandwidth())
       .padAngle(0.0)
       .padRadius(innerRadius);
-    // @ts-ignore
     const arcParent = g
       .append("g")
       .selectAll("g")
+      // @ts-ignore
       .data(stackGen(data))
       .enter()
       .append("g")

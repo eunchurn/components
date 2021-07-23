@@ -1,1 +1,1 @@
-{"version":3,"file":"DefaultProps.d.ts","sourceRoot":"","sources":["../../../src/WindRose/components/DefaultProps.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,IAAI;;;;;GA8LhB,CAAC;AAOF,eAAO,MAAM,YAAY;;;;;;;;;;;;;;;;;CA0BxB,CAAC"}
+{"version":3,"file":"DefaultProps.d.ts","sourceRoot":"","sources":["../../../src/WindRose/components/DefaultProps.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAEnC,eAAO,MAAM,IAAI,EAAE,QAAQ,EA8L1B,CAAC;AAOF,eAAO,MAAM,YAAY;;;;;;;;;;;;CA0BxB,CAAC"}
