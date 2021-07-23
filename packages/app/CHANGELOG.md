@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com-eunchurn/eunchurn/components/compare/v1.1.0...v1.1.1) (2021-07-23)
+
+
+### Bug Fixes
+
+* **type:** all types ([9a34c71](https://github.com-eunchurn/eunchurn/components/commit/9a34c715c73efee73b8eb3eb964f4aa4b7c99898))
+
+
+
+
+
 # 1.1.0 (2021-04-18)
 
 
