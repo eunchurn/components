@@ -23,7 +23,7 @@
     "@types/lodash": "4.14.168",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
-    "@types/styled-components": "5.1.9",
+    "@types/styled-components": "5.1.12",
     "standard-version": "9.2.0",
     "ts-jest": "26.5.5",
     "ts-node": "9.1.1",
