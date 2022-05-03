@@ -101,7 +101,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install --immutable --immutable-cache --check-cache
-          yarn bootstrap --no-progress --hoist --concurrency 2 -- --no-audit
+          yarn bootstrap --no-progress --concurrency 2
       - name: "Publish to Github Package Registry"
         run: |
           echo "registry=https://npm.pkg.github.com/eunchurn" >> ~/.npmrc
