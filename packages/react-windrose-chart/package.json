@@ -36,7 +36,7 @@
     "@types/styled-components": "5.1.12",
     "ts-jest": "26.5.5",
     "tslib": "2.2.0",
-    "typescript": "4.2.4"
+    "typescript": "4.6.4"
   },
   "gitHead": "bec0f930f1ef420ae1ebaef6c074ff5d606ab1c7"
 }
