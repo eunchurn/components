@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.7](https://github.com/eunchurn/components/compare/v1.2.5...v1.2.7) (2022-05-03)
+
+
+### Features
+
+* **package name:** change ([b6da6c3](https://github.com/eunchurn/components/commit/b6da6c31d1aa871969ddf1e2d111d1d3c3f299da))
+
+
+
+
+
 ## [1.2.6](https://github.com/eunchurn/components/compare/v1.2.5...v1.2.6) (2022-05-03)
 
 **Note:** Version bump only for package @eunchurn/react-windrose-chart
