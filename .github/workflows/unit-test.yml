@@ -29,10 +29,10 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: |
-          yarn
+          yarn install --immutable --immutable-cache --check-cache
       - name: Lerna Bootstrap
         run: |
-          yarn bootstrap
+          yarn bootstrap --no-progress --concurrency 2
       - name: Unit Test
         run: |
           yarn test --collectCoverage

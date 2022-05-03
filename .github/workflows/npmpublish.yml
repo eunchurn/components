@@ -23,7 +23,8 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: |
-          yarn bootstrap
+          yarn install --immutable --immutable-cache --check-cache
+          yarn bootstrap --no-progress --concurrency 2
       - name: Type Check
         run: |
           yarn typecheck
@@ -60,7 +61,8 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: |
-          yarn bootstrap
+          yarn install --immutable --immutable-cache --check-cache
+          yarn bootstrap --no-progress --concurrency 2
       - name: "Publish to Node Package Manager"
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
@@ -98,7 +100,8 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: |
-          yarn bootstrap
+          yarn install --immutable --immutable-cache --check-cache
+          yarn bootstrap --no-progress --hoist --concurrency 2 -- --no-audit
       - name: "Publish to Github Package Registry"
         run: |
           echo "registry=https://npm.pkg.github.com/eunchurn" >> ~/.npmrc
