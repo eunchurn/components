@@ -61,15 +61,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn bootstrap
-      - name: Type Check
-        run: |
-          yarn typecheck
-      - name: Unit Test
-        run: |
-          yarn test
-      - name: Build
-        run: |
-          yarn tsc
       - name: "Publish to Node Package Manager"
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
@@ -108,15 +99,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn bootstrap
-      - name: Type Check
-        run: |
-          yarn typecheck
-      - name: Unit Test
-        run: |
-          yarn test
-      - name: Build
-        run: |
-          yarn tsc
       - name: "Publish to Github Package Registry"
         run: |
           echo "registry=https://npm.pkg.github.com/eunchurn" >> ~/.npmrc

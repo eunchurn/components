@@ -86,7 +86,9 @@ export function Chart(props) {
             .keys(columns.slice(1));
         var arcVal = d3 // d3.DefaultArcObject
             .arc()
+            // @ts-ignore
             .innerRadius(function (d) { return Number(y(d[0])); })
+            // @ts-ignore
             .outerRadius(function (d) { return Number(y(d[1])); })
             // @ts-ignore
             .startAngle(function (d) { return Number(x(d.data.angle)); })
@@ -150,6 +152,7 @@ export function Chart(props) {
             .call(d3
             // @ts-ignore
             .axisLeft()
+            // @ts-ignore
             .scale(radius.copy().range([-innerRadius, -(outerRadius + 10)])));
         var yAxis = g.append("g").attr("text-anchor", "middle");
         var yTick = yAxis

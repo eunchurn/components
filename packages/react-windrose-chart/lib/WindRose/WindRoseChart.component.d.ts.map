@@ -1,1 +1,1 @@
-{"version":3,"file":"WindRoseChart.component.d.ts","sourceRoot":"","sources":["../../src/WindRose/WindRoseChart.component.tsx"],"names":[],"mappings":";AAIA,OAAO,EAAE,cAAc,EAA+B,MAAM,SAAS,CAAC;AAGtE,wBAAgB,KAAK,CAAC,KAAK,EAAE,cAAc,eA4N1C;yBA5Ne,KAAK"}
+{"version":3,"file":"WindRoseChart.component.d.ts","sourceRoot":"","sources":["../../src/WindRose/WindRoseChart.component.tsx"],"names":[],"mappings":";AAIA,OAAO,EAAE,cAAc,EAA+B,MAAM,SAAS,CAAC;AAGtE,wBAAgB,KAAK,CAAC,KAAK,EAAE,cAAc,eA+N1C;yBA/Ne,KAAK"}
