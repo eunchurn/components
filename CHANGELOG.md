@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/eunchurn/components/compare/v1.2.1...v1.2.2) (2022-05-03)
+
+
+### Bug Fixes
+
+* **npm:** --access public remove ([136ec1b](https://github.com/eunchurn/components/commit/136ec1b1f5e3748820423518cbc6b06eff051626))
+* **publish:** remove testing and build ([8e84cfe](https://github.com/eunchurn/components/commit/8e84cfe5862367c52a80e96c135c6ee61bda9cdb))
+
+
+
+
+
 ## [1.2.1](https://github.com/eunchurn/components/compare/v1.1.2...v1.2.1) (2022-05-03)
 
 **Note:** Version bump only for package root
