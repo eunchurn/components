@@ -40,7 +40,7 @@ export function Chart(props) {
         var outerRadius = Math.min(chartWidth, chartHeight) / 2.4 - legendGap / 2;
         var g = svg
             .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            .attr("transform", "translate(".concat(width / 2, ",").concat(height / 2, ")"));
         var angle = d3.scaleLinear().range([0, 2 * Math.PI]);
         var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
         var x = d3
@@ -115,7 +115,7 @@ export function Chart(props) {
         arc
             // @ts-ignore
             .attr("d", arcVal)
-            .attr("transform", "rotate(" + angleOffset + ")");
+            .attr("transform", "rotate(".concat(angleOffset, ")"));
         var label = g
             .append("g")
             .selectAll("g")
@@ -124,10 +124,10 @@ export function Chart(props) {
             .append("g")
             .attr("text-anchor", "middle")
             .attr("transform", function (d) {
-            return "rotate(" + (
+            return "rotate(".concat(
             // @ts-ignore
             ((Number(x(d.angle)) + x.bandwidth() / 2) * 180) / Math.PI -
-                (90 - angleOffset)) + ")translate(" + (outerRadius + 30) + ",0)";
+                (90 - angleOffset), ")translate(").concat(outerRadius + 30, ",0)");
         });
         label
             .append("text")
@@ -146,7 +146,7 @@ export function Chart(props) {
             .enter()
             .append("g")
             .attr("class", "axis")
-            .attr("transform", function (d) { return "rotate(" + (angle(d) * 180) / Math.PI + ")"; })
+            .attr("transform", function (d) { return "rotate(".concat((angle(d) * 180) / Math.PI, ")"); })
             .call(d3
             // @ts-ignore
             .axisLeft()
@@ -177,7 +177,7 @@ export function Chart(props) {
             .enter()
             .append("g")
             .attr("transform", function (d, i) {
-            return "translate(" + (outerRadius + 45 + legendGap / 2) + "," + (-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20) + ")";
+            return "translate(".concat(outerRadius + 45 + legendGap / 2, ",").concat(-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20, ")");
         });
         legend
             .append("rect")

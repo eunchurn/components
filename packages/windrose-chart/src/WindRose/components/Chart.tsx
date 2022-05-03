@@ -84,7 +84,9 @@ export function Chart(props: PropType): JSX.Element {
       .keys(dataKeys);
     const arcVal: d3.Arc<SVGPathElement, d3.DefaultArcObject> = d3
       .arc()
+      // @ts-ignore
       .innerRadius((d) => Number(y(d[0])))
+      // @ts-ignore
       .outerRadius((d) => Number(y(d[1])))
       .startAngle((_d, i) => Number(x(angles[i])))
       .endAngle((_d, i) => Number(x(angles[i])) + x.bandwidth())

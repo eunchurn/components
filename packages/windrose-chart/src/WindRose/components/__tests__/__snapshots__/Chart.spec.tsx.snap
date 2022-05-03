@@ -1,24 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Chart /> matches snapshot 1`] = `
-.c0 {
-  position: relative;
-}
-
-.c1 .axis {
-  position: absolute;
-  top: 0;
-  left: 0;
-  stroke: gray;
-}
-
 <div>
   <div
-    class="c0"
+    class="sc-bczRLJ iMgGOK"
     role="main"
   >
     <svg
-      class="c1 axis"
+      class="sc-gsnTZi rDnuv axis"
       height="500"
       role="document"
       width="600"
@@ -512,8 +501,11 @@ exports[`<Chart /> matches snapshot 1`] = `
     <div
       class="__react_component_tooltip t00000000-0000-0000-0000-000000000000 place-top type-dark"
       data-id="tooltip"
+      id="t00000000-0000-0000-0000-000000000000"
     >
-      <style>
+      <style
+        aria-hidden="true"
+      >
         
   	.t00000000-0000-0000-0000-000000000000 {
 	    color: #fff;
@@ -590,7 +582,6 @@ exports[`<Chart /> matches snapshot 1`] = `
     }
   
       </style>
-      
     </div>
   </div>
 </div>

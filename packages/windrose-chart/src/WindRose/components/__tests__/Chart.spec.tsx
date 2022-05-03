@@ -9,6 +9,14 @@ jest.mock("react-tooltip/node_modules/uuid", () => ({
   v4: () => "00000000-0000-0000-0000-000000000000",
 }));
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe("<Chart />", () => {
   it("matches snapshot", () => {
     const utils = render(<Chart chartData={data} />);

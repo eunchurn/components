@@ -42,7 +42,7 @@ export function Chart(props) {
         var outerRadius = innerRadius + Math.min(chartWidth, chartHeight) / 2;
         var g = svg
             .append("g")
-            .attr("transform", "translate(" + width / 2 + ", " + height / 2 + ")");
+            .attr("transform", "translate(".concat(width / 2, ", ").concat(height / 2, ")"));
         var angle = d3.scaleLinear().range([0, 2 * Math.PI]);
         var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
         var x = d3
@@ -71,7 +71,9 @@ export function Chart(props) {
             .keys(dataKeys);
         var arcVal = d3
             .arc()
+            // @ts-ignore
             .innerRadius(function (d) { return Number(y(d[0])); })
+            // @ts-ignore
             .outerRadius(function (d) { return Number(y(d[1])); })
             .startAngle(function (_d, i) { return Number(x(angles[i])); })
             .endAngle(function (_d, i) { return Number(x(angles[i])) + x.bandwidth(); })
@@ -92,11 +94,11 @@ export function Chart(props) {
         arc
             // @ts-ignore
             .attr("d", arcVal)
-            .attr("transform", "rotate(" + angleOffset + ")")
+            .attr("transform", "rotate(".concat(angleOffset, ")"))
             .attr("fill", function (d) { return d.data.color; })
-            .attr("class", function (_d, i) { return "arc_" + i; })
+            .attr("class", function (_d, i) { return "arc_".concat(i); })
             .attr("data-tip", function (item) {
-            return item.data.coreCompetency + "@" + item.data.survey;
+            return "".concat(item.data.coreCompetency, "@").concat(item.data.survey);
         })
             .on("mouseover", function (_event, _d) {
             this.setAttribute("fill", mouseOverColor);
@@ -115,8 +117,8 @@ export function Chart(props) {
             .attr("transform", function (d) {
             if (typeof d === "undefined")
                 return null;
-            return "rotate(" + (((Number(xGroup(d)) + xGroup.bandwidth() / 2) * 180) / Math.PI -
-                (90 - angleOffset)) + ")translate(" + outerRadius + ",0)";
+            return "rotate(".concat(((Number(xGroup(d)) + xGroup.bandwidth() / 2) * 180) / Math.PI -
+                (90 - angleOffset), ")translate(").concat(outerRadius, ",0)");
         });
         label
             .append("text")
@@ -151,7 +153,7 @@ export function Chart(props) {
             .enter()
             .append("g")
             .attr("transform", function (_d, i) {
-            return "translate(" + (outerRadius + 0) + "," + (-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20) + ")";
+            return "translate(".concat(outerRadius + 0, ",").concat(-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20, ")");
         });
         legend
             .append("rect")

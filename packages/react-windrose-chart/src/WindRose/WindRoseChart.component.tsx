@@ -95,7 +95,9 @@ export function Chart(props: ChartPropTypes) {
       .keys(columns.slice(1));
     const arcVal: d3.Arc<SVGPathElement, d3.DefaultArcObject> = d3 // d3.DefaultArcObject
       .arc()
+      // @ts-ignore
       .innerRadius((d) => Number(y(d[0])))
+      // @ts-ignore
       .outerRadius((d) => Number(y(d[1])))
       // @ts-ignore
       .startAngle((d) => Number(x(d.data.angle)))
@@ -166,6 +168,7 @@ export function Chart(props: ChartPropTypes) {
         d3
           // @ts-ignore
           .axisLeft()
+          // @ts-ignore
           .scale(radius.copy().range([-innerRadius, -(outerRadius + 10)]))
       );
     const yAxis = g.append("g").attr("text-anchor", "middle");
