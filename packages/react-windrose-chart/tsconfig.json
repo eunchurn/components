@@ -22,5 +22,5 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["lib", "node_modules", "jest"]
+  "exclude": ["lib", "node_modules", "jest", "**/__tests__"]
 }

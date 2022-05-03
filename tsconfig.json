@@ -15,5 +15,5 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "exclude": ["lib", "node_modules", "jest"]
+  "exclude": ["lib", "node_modules", "jest", "**/__tests__"]
 }
