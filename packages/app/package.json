@@ -1,10 +1,10 @@
 {
   "name": "app",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "private": true,
   "dependencies": {
-    "@eunchurn/react-windrose-chart": "^1.2.3",
-    "@eunchurn/windrose-chart": "^1.2.3",
+    "@eunchurn/react-windrose-chart": "^1.2.4",
+    "@eunchurn/windrose-chart": "^1.2.4",
     "@material-ui/core": "4.12.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.1.1",
