@@ -43,6 +43,8 @@ export interface PropType extends State {
      * Mouseover survey score text color
      */
     mouseOverSurveyColor: string;
+    responsive: boolean;
+    legendGap: number;
 }
 export {};
 //# sourceMappingURL=Types.d.ts.map

@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 type DirectionCount = {
   "0-1": number;
   "1-2": number;
@@ -22,24 +20,24 @@ export type CountClassify =
   | "6-7"
   | "7+";
 
-const Direction = {
-  N: "N",
-  NNE: "NNE",
-  NE: "NE",
-  ENE: "ENE",
-  E: "E",
-  ESE: "ESE",
-  SE: "SE",
-  SSE: "SEE",
-  S: "S",
-  SSW: "SSW",
-  SW: "SW",
-  WSW: "WSW",
-  W: "W",
-  WNW: "WNW",
-  NW: "NW",
-  NNW: "NNW",
-};
+export enum Direction {
+  N = "N",
+  NNE = "NNE",
+  NE = "NE",
+  ENE = "ENE",
+  E = "E",
+  ESE = "ESE",
+  SE = "SE",
+  SSE = "SSE",
+  S = "S",
+  SSW = "SSW",
+  SW = "SW",
+  WSW = "WSW",
+  W = "W",
+  WNW = "WNW",
+  NW = "NW",
+  NNW = "NNW",
+}
 
 export type Count = {
   N: DirectionCount;
@@ -60,7 +58,8 @@ export type Count = {
   NNW: DirectionCount;
 };
 
-export type Direction = typeof Direction[keyof typeof Direction];
+// export type Direction = typeof Direction[keyof typeof Direction];
+// export type Direction = keyof typeof Direction;
 
 // export const ChartPropTypes = {
 //   data: PropTypes.arrayOf(
@@ -102,7 +101,7 @@ type Angle =
   | "WNW"
   | "NW"
   | "NNW";
-type ChartData = {
+export type ChartData = {
   angle: Angle;
   "0-1": number;
   "1-2": number;
@@ -115,6 +114,8 @@ type ChartData = {
   total: number;
 };
 
+export type Column = keyof ChartData;
+
 export interface ChartPropTypes extends React.HTMLProps<HTMLDivElement> {
   // data: DirectionCount & { angle: Direction; total: number }[];
   chartData: ChartData[];
@@ -122,6 +123,8 @@ export interface ChartPropTypes extends React.HTMLProps<HTMLDivElement> {
   columns: string[];
   width: number;
   height: number;
+  responsive: boolean;
+  legendGap: number;
 }
 
 export const ChartDefaultProps: ChartPropTypes = {
@@ -322,6 +325,8 @@ export const ChartDefaultProps: ChartPropTypes = {
     },
   ],
   columns: ["angle", "0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7+"],
+  responsive: false,
+  legendGap: 10,
 };
 
 export interface DataType {
@@ -333,43 +338,4 @@ export interface DataType {
 interface State {
   width: number;
   height: number;
-}
-
-export interface PropType extends State {
-  /**
-   * Professionals respond to survey of how much they use a K-12 core competancy in each subject
-   */
-  data: DataType[];
-  /**
-   * Subjects
-   */
-  columns: string[];
-  /**
-   * Subjects colors
-   */
-  columnsColor: string[];
-  /**
-   * All core competency
-   */
-  angles: string[];
-  /**
-   * Max score
-   */
-  dataMax: number;
-  /**
-   * Target data keys
-   */
-  dataKeys: string[];
-  /**
-   * Mouse over Path color
-   */
-  mouseOverColor: string;
-  /**
-   * Mouse over competency text color
-   */
-  mouseOverTitleColor: string;
-  /**
-   * Mouseover survey score text color
-   */
-  mouseOverSurveyColor: string;
 }

@@ -5,11 +5,12 @@ import ReactTooltip from "react-tooltip";
 import { DefaultProps } from "./DefaultProps";
 import { PropType, DataType } from "./Types";
 import { isNull } from "lodash";
+import { useResponsive } from "./hooks";
 
 export function Chart(props: PropType): JSX.Element {
   const {
-    width,
-    height,
+    width: propWidth,
+    height: propHeight,
     chartData: data,
     columns,
     columnsColor: z,
@@ -19,12 +20,32 @@ export function Chart(props: PropType): JSX.Element {
     mouseOverColor,
     mouseOverTitleColor,
     mouseOverSurveyColor,
+    responsive,
+    legendGap,
   } = props;
   const containerRef = React.useRef<SVGSVGElement>(null);
   const axisContainerRef = React.useRef<HTMLDivElement>(null);
+  const containerSize = useResponsive(axisContainerRef, {
+    width: propWidth,
+    height: propHeight,
+  });
+  const [size, setSize] = React.useState({
+    width: propWidth,
+    height: propHeight,
+  });
+  React.useEffect(() => {
+    const { width, height } = containerSize;
+    if (responsive) {
+      const rect = Math.min(width, height);
+      setSize({ width: rect, height: rect });
+    } else {
+      setSize({ width: propWidth, height: propHeight });
+    }
+  }, [responsive, axisContainerRef, containerSize.width]);
   React.useEffect(() => {
     const { current } = containerRef;
     if (isNull(current)) return;
+    const { width, height } = size;
     const svg = d3.select(containerRef.current);
     svg.selectAll("*").remove();
     const margin = { top: 80, right: 100, bottom: 80, left: 40 };
@@ -58,11 +79,9 @@ export function Chart(props: PropType): JSX.Element {
     angle.domain([0, d3.max(data, (_, i): number => i + 1) as number]);
     radius.domain([0, d3.max(data, () => 0) as number]);
     const angleOffset = -360.0 / data.length / 2.0;
-    const stackGen: d3.Stack<
-      any,
-      { [key: string]: number },
-      string
-    > = d3.stack().keys(dataKeys);
+    const stackGen: d3.Stack<any, { [key: string]: number }, string> = d3
+      .stack()
+      .keys(dataKeys);
     const arcVal: d3.Arc<SVGPathElement, d3.DefaultArcObject> = d3
       .arc()
       .innerRadius((d) => Number(y(d[0])))
@@ -77,7 +96,7 @@ export function Chart(props: PropType): JSX.Element {
       // @ts-ignore
       .data(stackGen(data))
       .enter();
-      // @ts-ignore
+    // @ts-ignore
     const arc: d3.Selection<
       SVGPathElement,
       d3.SeriesPoint<DataType>,
@@ -187,16 +206,16 @@ export function Chart(props: PropType): JSX.Element {
       .text((d) => d)
       .style("font-size", 12);
     g.exit().remove();
-  }, []);
+  }, [containerSize.width]);
   React.useEffect(() => {
     ReactTooltip.rebuild();
-  }, []);
+  }, [containerSize.width]);
   return (
     <AxisContainer ref={axisContainerRef} role="main">
       <Axis
         className="axis"
-        width={width}
-        height={height}
+        width={size.width}
+        height={size.height}
         ref={containerRef}
         role="document"
       />
@@ -236,14 +255,13 @@ export function Chart(props: PropType): JSX.Element {
 }
 
 export const AxisContainer = styled.div`
-  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
 `;
 
 export const Axis = styled.svg`
   .axis {
-    position: absolute;
-    top: 0;
-    left: 0;
     stroke: gray;
   }
 `;
@@ -260,6 +278,8 @@ const {
   mouseOverColor,
   mouseOverTitleColor,
   mouseOverSurveyColor,
+  responsive,
+  legendGap,
 } = DefaultProps;
 
 Chart.defaultProps = {
@@ -274,6 +294,8 @@ Chart.defaultProps = {
   mouseOverColor,
   mouseOverTitleColor,
   mouseOverSurveyColor,
+  responsive,
+  legendGap,
 };
 
 export default Chart;

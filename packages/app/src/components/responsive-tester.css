@@ -1,0 +1,29 @@
+:root {
+  --position: 0;
+  --br-width: 20px;
+  --green-color: #7d7;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  margin-left: var(--position);
+  padding: 10px;
+  border: 1px solid var(--green-color);
+  border-right-width: var(--br-width);
+  border-radius: 10px;
+  user-select: none;
+}
+
+.handler {
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--br-width));
+  width: var(--br-width);
+  color: black;
+  line-height: 20px;
+  text-align: center;
+  transform: translate(0, -50%);
+  pointer-events: none;
+}

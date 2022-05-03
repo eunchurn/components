@@ -1,23 +1,43 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 import * as d3 from "d3";
 import { AxisContainer, Axis } from "./WindRoseChart.style";
 import { ChartDefaultProps } from "./Types";
-import { isNull } from "lodash";
+import { useResponsive } from "./hooks";
 export function Chart(props) {
+    var propWidth = props.width, propHeight = props.height, data = props.chartData, columns = props.columns, responsive = props.responsive, legendGap = props.legendGap;
     var containerRef = React.useRef(null);
     var axisContainerRef = React.useRef(null);
-    var width = props.width, height = props.height, data = props.chartData, columns = props.columns;
+    var containerSize = useResponsive(axisContainerRef, {
+        width: propWidth,
+        height: propHeight,
+    });
+    var _a = React.useState({
+        width: propWidth,
+        height: propHeight,
+    }), size = _a[0], setSize = _a[1];
+    React.useEffect(function () {
+        var width = containerSize.width, height = containerSize.height;
+        if (responsive) {
+            var rect = Math.min(width, height);
+            setSize({ width: rect, height: rect });
+        }
+        else {
+            setSize({ width: propWidth, height: propHeight });
+        }
+    }, [responsive, axisContainerRef, containerSize.width]);
     React.useEffect(function () {
         var current = containerRef.current;
-        if (isNull(current))
+        if (current === null)
             return;
+        var width = size.width, height = size.height;
         var svg = d3.select(containerRef.current);
         svg.selectAll("*").remove();
         var margin = { top: 40, right: 80, bottom: 40, left: 40 };
         var innerRadius = 20;
         var chartWidth = width - margin.left - margin.right;
         var chartHeight = height - margin.top - margin.bottom;
-        var outerRadius = Math.min(chartWidth, chartHeight) / 2.4;
+        var outerRadius = Math.min(chartWidth, chartHeight) / 2.4 - legendGap / 2;
         var g = svg
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -27,10 +47,10 @@ export function Chart(props) {
             .scaleBand()
             .range([0, 2 * Math.PI])
             .align(0);
-        var xGroup = d3
-            .scaleBand()
-            .range([0, 2 * Math.PI])
-            .align(0);
+        // const xGroup = d3
+        //   .scaleBand()
+        //   .range([0, 2 * Math.PI])
+        //   .align(0);
         var y = d3
             .scaleLinear() // you can try scaleRadial but it scales differently
             .range([innerRadius, outerRadius]);
@@ -59,6 +79,7 @@ export function Chart(props) {
         // Extend the domain slightly to match the range of [0, 2π].
         angle.domain([0, d3.max(data, function (_, i) { return i + 1; }) || 0]);
         radius.domain([0, d3.max(data, function () { return 0; }) || 0]);
+        // radius.domain([innerRadius, outerRadius]);
         var angleOffset = -360.0 / data.length / 2.0;
         var stackGen = d3
             .stack()
@@ -95,28 +116,6 @@ export function Chart(props) {
             // @ts-ignore
             .attr("d", arcVal)
             .attr("transform", "rotate(" + angleOffset + ")");
-        // g.append("g")
-        //   .selectAll("g")
-        //   .data(d3.stack().keys(columns.slice(1))(data))
-        //   .enter()
-        //   .append("g")
-        //   .attr("fill", (d) => z(d.key))
-        //   .selectAll("path")
-        //   .data((d) => d)
-        //   .enter()
-        //   .append("path")
-        //   .attr(
-        //     "d",
-        //     d3
-        //       .arc()
-        //       .innerRadius((d) => y(d[0]))
-        //       .outerRadius((d) => y(d[1]))
-        //       .startAngle((d) => x(d.data.angle))
-        //       .endAngle((d) => x(d.data.angle) + x.bandwidth())
-        //       .padAngle(0.01)
-        //       .padRadius(innerRadius)
-        //   )
-        //   .attr("transform", () => `rotate(${angleOffset})`);
         var label = g
             .append("g")
             .selectAll("g")
@@ -125,7 +124,6 @@ export function Chart(props) {
             .append("g")
             .attr("text-anchor", "middle")
             .attr("transform", function (d) {
-            // if (typeof d === "undefined") return null;
             return "rotate(" + (
             // @ts-ignore
             ((Number(x(d.angle)) + x.bandwidth() / 2) * 180) / Math.PI -
@@ -134,7 +132,7 @@ export function Chart(props) {
         label
             .append("text")
             // eslint-disable-next-line no-confusing-arrow
-            .attr("transform", function (d, i) {
+            .attr("transform", function (d, _i) {
             // @ts-ignore
             return (x(d.angle) + x.bandwidth() / 2 + Math.PI / 2) % (2 * Math.PI < Math.PI)
                 ? "rotate(90)translate(0,16)"
@@ -179,7 +177,7 @@ export function Chart(props) {
             .enter()
             .append("g")
             .attr("transform", function (d, i) {
-            return "translate(" + (outerRadius + 45) + "," + (-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20) + ")";
+            return "translate(" + (outerRadius + 45 + legendGap / 2) + "," + (-outerRadius + 40 + (i - (columns.length - 1) / 2) * 20) + ")";
         });
         legend
             .append("rect")
@@ -195,9 +193,9 @@ export function Chart(props) {
             .text(function (d) { return d; })
             .style("font-size", 12);
         g.exit().remove();
-    }, []);
+    }, [containerSize.width]);
     return (React.createElement(AxisContainer, { ref: axisContainerRef },
-        React.createElement(Axis, { className: "axis", width: width, height: height, ref: containerRef })));
+        React.createElement(Axis, { className: "axis", width: size.width, height: size.height, ref: containerRef })));
 }
 Chart.defaultProps = ChartDefaultProps;
 //# sourceMappingURL=WindRoseChart.component.js.map

@@ -4,7 +4,7 @@ export declare function Chart(props: PropType): JSX.Element;
 export declare namespace Chart {
     var defaultProps: {
         chartData: DataType[];
-        dataMax: string;
+        dataMax: number;
         angles: string[];
         columns: string[];
         columnsColor: string[];
@@ -14,6 +14,8 @@ export declare namespace Chart {
         mouseOverColor: string;
         mouseOverTitleColor: string;
         mouseOverSurveyColor: string;
+        responsive: boolean;
+        legendGap: number;
     };
 }
 export declare const AxisContainer: import("styled-components").StyledComponent<"div", any, {}, never>;

@@ -116,6 +116,10 @@ export interface PropType extends State {
    * Mouseover survey score text color
    */
   mouseOverSurveyColor: string;
+  /* A boolean that is used to determine if the chart is responsive or not. */
+  responsive: boolean;
+  /* width gap pixels between chart and legend */
+  legendGap: number;
 }
 
 ```
@@ -350,6 +354,10 @@ export const DefaultProps = {
   mouseOverColor: "#1abc9c",
   mouseOverTitleColor: "#e67e22",
   mouseOverSurveyColor: "#e74c3c",
+  /* A boolean that is used to determine if the chart is responsive or not. */
+  responsive: false;
+  /* width gap pixels between chart and legend */
+  legendGap: 10;
 };
 ```
 

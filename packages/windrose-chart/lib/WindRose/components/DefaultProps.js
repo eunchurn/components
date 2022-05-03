@@ -187,7 +187,7 @@ var maxData = data.reduce(function (pre, cur) {
 export var DefaultProps = {
     width: 600,
     height: 500,
-    dataMax: maxData.survey,
+    dataMax: Number(maxData.survey),
     chartData: data,
     columns: [
         "Language Arts",
@@ -210,5 +210,7 @@ export var DefaultProps = {
     mouseOverColor: "#1abc9c",
     mouseOverTitleColor: "#e67e22",
     mouseOverSurveyColor: "#e74c3c",
+    responsive: false,
+    legendGap: 0,
 };
 //# sourceMappingURL=DefaultProps.js.map

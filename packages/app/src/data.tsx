@@ -198,4 +198,6 @@ export const defaultData: ChartPropTypes = {
     },
   ],
   columns: ["angle", "0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7+"],
+  responsive: true,
+  legendGap: 10,
 };

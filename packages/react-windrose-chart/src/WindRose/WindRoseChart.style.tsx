@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const AxisContainer = styled.div`
-  // position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
 `;
 
 export const Axis = styled.svg`
   .axis {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
     stroke: gray;
   }
 `;

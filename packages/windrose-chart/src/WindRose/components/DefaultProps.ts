@@ -1,4 +1,4 @@
-import { DataType } from "./Types";
+import { DataType, PropType } from "./Types";
 
 export const data: DataType[] = [
   {
@@ -197,10 +197,10 @@ const maxData = data.reduce((pre, cur) =>
   pre.survey > cur.survey ? pre : cur
 );
 
-export const DefaultProps = {
+export const DefaultProps: PropType = {
   width: 600,
   height: 500,
-  dataMax: maxData.survey,
+  dataMax: Number(maxData.survey),
   chartData: data,
   columns: [
     "Language Arts",
@@ -223,4 +223,6 @@ export const DefaultProps = {
   mouseOverColor: "#1abc9c",
   mouseOverTitleColor: "#e67e22",
   mouseOverSurveyColor: "#e74c3c",
+  responsive: false,
+  legendGap: 0,
 };

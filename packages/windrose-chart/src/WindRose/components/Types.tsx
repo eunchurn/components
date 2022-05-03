@@ -52,4 +52,8 @@ export interface PropType extends State {
    * Mouseover survey score text color
    */
   mouseOverSurveyColor: string;
+  /* A boolean that is used to determine if the chart is responsive or not. */
+  responsive: boolean;
+  /* width gap pixels between chart and legend */
+  legendGap: number;
 }

@@ -10,24 +10,24 @@ declare type DirectionCount = {
     "7+": number;
 };
 export declare type CountClassify = "angle" | "0-1" | "1-2" | "2-3" | "3-4" | "4-5" | "5-6" | "6-7" | "7+";
-declare const Direction: {
-    N: string;
-    NNE: string;
-    NE: string;
-    ENE: string;
-    E: string;
-    ESE: string;
-    SE: string;
-    SSE: string;
-    S: string;
-    SSW: string;
-    SW: string;
-    WSW: string;
-    W: string;
-    WNW: string;
-    NW: string;
-    NNW: string;
-};
+export declare enum Direction {
+    N = "N",
+    NNE = "NNE",
+    NE = "NE",
+    ENE = "ENE",
+    E = "E",
+    ESE = "ESE",
+    SE = "SE",
+    SSE = "SSE",
+    S = "S",
+    SSW = "SSW",
+    SW = "SW",
+    WSW = "WSW",
+    W = "W",
+    WNW = "WNW",
+    NW = "NW",
+    NNW = "NNW"
+}
 export declare type Count = {
     N: DirectionCount;
     NNE: DirectionCount;
@@ -46,12 +46,11 @@ export declare type Count = {
     NW: DirectionCount;
     NNW: DirectionCount;
 };
-export declare type Direction = typeof Direction[keyof typeof Direction];
 export declare type DataTypes = {
     [key: string]: number;
 }[];
 declare type Angle = "N" | "NNE" | "NE" | "ENE" | "E" | "ESE" | "SE" | "SSE" | "S" | "SSW" | "SW" | "WSW" | "W" | "WNW" | "NW" | "NNW";
-declare type ChartData = {
+export declare type ChartData = {
     angle: Angle;
     "0-1": number;
     "1-2": number;
@@ -63,57 +62,18 @@ declare type ChartData = {
     "7+": number;
     total: number;
 };
+export declare type Column = keyof ChartData;
 export interface ChartPropTypes extends React.HTMLProps<HTMLDivElement> {
     chartData: ChartData[];
     columns: string[];
     width: number;
     height: number;
+    responsive: boolean;
+    legendGap: number;
 }
 export declare const ChartDefaultProps: ChartPropTypes;
 export interface DataType {
     [key: string]: number | null;
-}
-interface State {
-    width: number;
-    height: number;
-}
-export interface PropType extends State {
-    /**
-     * Professionals respond to survey of how much they use a K-12 core competancy in each subject
-     */
-    data: DataType[];
-    /**
-     * Subjects
-     */
-    columns: string[];
-    /**
-     * Subjects colors
-     */
-    columnsColor: string[];
-    /**
-     * All core competency
-     */
-    angles: string[];
-    /**
-     * Max score
-     */
-    dataMax: number;
-    /**
-     * Target data keys
-     */
-    dataKeys: string[];
-    /**
-     * Mouse over Path color
-     */
-    mouseOverColor: string;
-    /**
-     * Mouse over competency text color
-     */
-    mouseOverTitleColor: string;
-    /**
-     * Mouseover survey score text color
-     */
-    mouseOverSurveyColor: string;
 }
 export {};
 //# sourceMappingURL=Types.d.ts.map

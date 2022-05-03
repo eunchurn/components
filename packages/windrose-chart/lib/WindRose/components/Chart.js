@@ -5,14 +5,34 @@ import styled from "styled-components";
 import ReactTooltip from "react-tooltip";
 import { DefaultProps } from "./DefaultProps";
 import { isNull } from "lodash";
+import { useResponsive } from "./hooks";
 export function Chart(props) {
-    var width = props.width, height = props.height, data = props.chartData, columns = props.columns, z = props.columnsColor, angles = props.angles, dataMax = props.dataMax, dataKeys = props.dataKeys, mouseOverColor = props.mouseOverColor, mouseOverTitleColor = props.mouseOverTitleColor, mouseOverSurveyColor = props.mouseOverSurveyColor;
+    var propWidth = props.width, propHeight = props.height, data = props.chartData, columns = props.columns, z = props.columnsColor, angles = props.angles, dataMax = props.dataMax, dataKeys = props.dataKeys, mouseOverColor = props.mouseOverColor, mouseOverTitleColor = props.mouseOverTitleColor, mouseOverSurveyColor = props.mouseOverSurveyColor, responsive = props.responsive, legendGap = props.legendGap;
     var containerRef = React.useRef(null);
     var axisContainerRef = React.useRef(null);
+    var containerSize = useResponsive(axisContainerRef, {
+        width: propWidth,
+        height: propHeight,
+    });
+    var _a = React.useState({
+        width: propWidth,
+        height: propHeight,
+    }), size = _a[0], setSize = _a[1];
+    React.useEffect(function () {
+        var width = containerSize.width, height = containerSize.height;
+        if (responsive) {
+            var rect = Math.min(width, height);
+            setSize({ width: rect, height: rect });
+        }
+        else {
+            setSize({ width: propWidth, height: propHeight });
+        }
+    }, [responsive, axisContainerRef, containerSize.width]);
     React.useEffect(function () {
         var current = containerRef.current;
         if (isNull(current))
             return;
+        var width = size.width, height = size.height;
         var svg = d3.select(containerRef.current);
         svg.selectAll("*").remove();
         var margin = { top: 80, right: 100, bottom: 80, left: 40 };
@@ -46,7 +66,9 @@ export function Chart(props) {
         angle.domain([0, d3.max(data, function (_, i) { return i + 1; })]);
         radius.domain([0, d3.max(data, function () { return 0; })]);
         var angleOffset = -360.0 / data.length / 2.0;
-        var stackGen = d3.stack().keys(dataKeys);
+        var stackGen = d3
+            .stack()
+            .keys(dataKeys);
         var arcVal = d3
             .arc()
             .innerRadius(function (d) { return Number(y(d[0])); })
@@ -144,12 +166,12 @@ export function Chart(props) {
             .text(function (d) { return d; })
             .style("font-size", 12);
         g.exit().remove();
-    }, []);
+    }, [containerSize.width]);
     React.useEffect(function () {
         ReactTooltip.rebuild();
-    }, []);
+    }, [containerSize.width]);
     return (React.createElement(AxisContainer, { ref: axisContainerRef, role: "main" },
-        React.createElement(Axis, { className: "axis", width: width, height: height, ref: containerRef, role: "document" }),
+        React.createElement(Axis, { className: "axis", width: size.width, height: size.height, ref: containerRef, role: "document" }),
         React.createElement(ReactTooltip, { multiline: true, getContent: function (dataTip) {
                 if (isNull(dataTip))
                     return "";
@@ -166,9 +188,9 @@ export function Chart(props) {
                         } }, survey)));
             }, type: "light", effect: "float", delayHide: 100 })));
 }
-export var AxisContainer = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-export var Axis = styled.svg(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  .axis {\n    position: absolute;\n    top: 0;\n    left: 0;\n    stroke: gray;\n  }\n"], ["\n  .axis {\n    position: absolute;\n    top: 0;\n    left: 0;\n    stroke: gray;\n  }\n"])));
-var chartData = DefaultProps.chartData, angles = DefaultProps.angles, columns = DefaultProps.columns, columnsColor = DefaultProps.columnsColor, width = DefaultProps.width, height = DefaultProps.height, dataMax = DefaultProps.dataMax, dataKeys = DefaultProps.dataKeys, mouseOverColor = DefaultProps.mouseOverColor, mouseOverTitleColor = DefaultProps.mouseOverTitleColor, mouseOverSurveyColor = DefaultProps.mouseOverSurveyColor;
+export var AxisContainer = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 100%;\n  height: auto;\n  aspect-ratio: 1/1;\n"], ["\n  width: 100%;\n  height: auto;\n  aspect-ratio: 1/1;\n"])));
+export var Axis = styled.svg(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  .axis {\n    stroke: gray;\n  }\n"], ["\n  .axis {\n    stroke: gray;\n  }\n"])));
+var chartData = DefaultProps.chartData, angles = DefaultProps.angles, columns = DefaultProps.columns, columnsColor = DefaultProps.columnsColor, width = DefaultProps.width, height = DefaultProps.height, dataMax = DefaultProps.dataMax, dataKeys = DefaultProps.dataKeys, mouseOverColor = DefaultProps.mouseOverColor, mouseOverTitleColor = DefaultProps.mouseOverTitleColor, mouseOverSurveyColor = DefaultProps.mouseOverSurveyColor, responsive = DefaultProps.responsive, legendGap = DefaultProps.legendGap;
 Chart.defaultProps = {
     chartData: chartData,
     dataMax: dataMax,
@@ -181,6 +203,8 @@ Chart.defaultProps = {
     mouseOverColor: mouseOverColor,
     mouseOverTitleColor: mouseOverTitleColor,
     mouseOverSurveyColor: mouseOverSurveyColor,
+    responsive: responsive,
+    legendGap: legendGap,
 };
 export default Chart;
 var templateObject_1, templateObject_2;

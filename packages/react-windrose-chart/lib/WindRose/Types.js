@@ -1,21 +1,22 @@
-var Direction = {
-    N: "N",
-    NNE: "NNE",
-    NE: "NE",
-    ENE: "ENE",
-    E: "E",
-    ESE: "ESE",
-    SE: "SE",
-    SSE: "SEE",
-    S: "S",
-    SSW: "SSW",
-    SW: "SW",
-    WSW: "WSW",
-    W: "W",
-    WNW: "WNW",
-    NW: "NW",
-    NNW: "NNW",
-};
+export var Direction;
+(function (Direction) {
+    Direction["N"] = "N";
+    Direction["NNE"] = "NNE";
+    Direction["NE"] = "NE";
+    Direction["ENE"] = "ENE";
+    Direction["E"] = "E";
+    Direction["ESE"] = "ESE";
+    Direction["SE"] = "SE";
+    Direction["SSE"] = "SSE";
+    Direction["S"] = "S";
+    Direction["SSW"] = "SSW";
+    Direction["SW"] = "SW";
+    Direction["WSW"] = "WSW";
+    Direction["W"] = "W";
+    Direction["WNW"] = "WNW";
+    Direction["NW"] = "NW";
+    Direction["NNW"] = "NNW";
+})(Direction || (Direction = {}));
 export var ChartDefaultProps = {
     width: 600,
     height: 600,
@@ -214,5 +215,7 @@ export var ChartDefaultProps = {
         },
     ],
     columns: ["angle", "0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7+"],
+    responsive: false,
+    legendGap: 10,
 };
 //# sourceMappingURL=Types.js.map
