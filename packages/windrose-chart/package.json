@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/d3": "6.3.0",
     "@types/jest": "26.0.22",
-    "@types/lodash": "4.14.168",
+    "@types/lodash": "4.14.182",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
     "@types/styled-components": "5.1.12",
