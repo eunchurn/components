@@ -1,6 +1,6 @@
 # Windrose Chart Component
 
-![Node.js Package](https://github.com/eunchurn/windrose-chart/workflows/Node.js%20Package/badge.svg) ![Unit Test](https://github.com/eunchurn/windrose-chart/workflows/Unit%20Test/badge.svg?branch=master) ![Deploy Storybook](https://github.com/eunchurn/windrose-chart/workflows/Deploy%20Storybook/badge.svg) [![codecov](https://codecov.io/gh/eunchurn/windrose-chart/branch/master/graph/badge.svg)](https://codecov.io/gh/eunchurn/windrose-chart) [![npm version](https://badge.fury.io/js/%40eunchurn%2Fwindrose-chart.svg)](https://badge.fury.io/js/%40eunchurn%2Fwindrose-chart) ![CodeQL](https://github.com/eunchurn/windrose-chart/workflows/CodeQL/badge.svg) [![CLA assistant](https://cla-assistant.io/readme/badge/eunchurn/windrose-chart)](https://cla-assistant.io/eunchurn/windrose-chart)
+[![Unit Test](https://github.com/eunchurn/components/actions/workflows/unit-test.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/unit-test.yml) [![Node.js Package](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml) [![CodeQL](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml) [![codecov](https://codecov.io/gh/eunchurn/components/branch/master/graph/badge.svg?token=XK02PSQ4Ik)](https://codecov.io/gh/eunchurn/components) [![npm version](https://badge.fury.io/js/%40eunchurn%2Fwindrose-chart.svg)](https://badge.fury.io/js/%40eunchurn%2Fwindrose-chart)
 
 
 ![chart](doc/2020-06-09%2002.59.40.png)
@@ -360,24 +360,6 @@ export const DefaultProps = {
   legendGap: 10;
 };
 ```
-
-## Development
-
-### Install
-
-- Clone this repo
-- install packages
-
-```bash
-npm i
-```
-
-### Storybook
-
-```bash
-npm run storybook
-```
-
 ## Pull request
 
 Feel free to create a pull request, <https://github.com/eunchurn/windrose-chart/pulls>

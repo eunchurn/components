@@ -1,5 +1,5 @@
 {
-  "name": "@eunchurn/react-windrose-chart",
+  "name": "@eunchurn/react-windrose",
   "version": "1.2.6",
   "private": false,
   "files": [
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/eunchurn/components.git",
-    "directory": "packages/react-windrose-chart"
+    "directory": "packages/react-windrose"
   },
   "scripts": {
     "tsc": "tsc",
