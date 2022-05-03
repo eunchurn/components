@@ -1,0 +1,118 @@
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys:
+            |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: |
+          yarn bootstrap
+      - name: Type Check
+        run: |
+          yarn typecheck
+      - name: Unit Test
+        run: |
+          yarn test
+      - name: Build
+        run: |
+          yarn tsc
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys:
+            |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: |
+          yarn bootstrap
+      - name: Type Check
+        run: |
+          yarn typecheck
+      - name: Unit Test
+        run: |
+          yarn test
+      - name: Build
+        run: |
+          yarn tsc
+      - name: "Publish to Node Package Manager"
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm config set scope "@eunchurn"
+          npm config list
+          echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
+          npm publish --access public
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Setup actions"
+        uses: actions/checkout@v3
+      - name: "npm/registry setup"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          scope: '@eunchurn'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys:
+            |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: |
+          yarn bootstrap
+      - name: Type Check
+        run: |
+          yarn typecheck
+      - name: Unit Test
+        run: |
+          yarn test
+      - name: Build
+        run: |
+          yarn tsc
+      - name: "Publish to Github Package Registry"
+        run: |
+          echo "registry=https://npm.pkg.github.com/eunchurn" >> ~/.npmrc
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}
