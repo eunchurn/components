@@ -2106,16 +2106,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@eunchurn/react-windrose-chart@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/@eunchurn/react-windrose-chart/-/react-windrose-chart-1.2.6.tgz#f4a28d295f0d5a79f4e170343edfc7cc28be06cb"
-  integrity sha512-0lrCiDtOXw/qKLpA6exBYUIRYVW1sElTl1/U1ZpgTTwxli8msQbHjEaITpnmZpfhknM8SCbAVAEDvMlBjJ5iDg==
-  dependencies:
-    lodash "^4.17.21"
-    react "18.1.0"
-    react-dom "18.1.0"
-    styled-components "^5.3.5"
-
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"

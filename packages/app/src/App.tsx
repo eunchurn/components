@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Chart as ReactWindRoseChart } from "@eunchurn/react-windrose";
 import { defaultData } from "./data";
-import { Chart as WindRoseChart } from "@eunchurn/windrose-chart";
+import { Chart as WindRoseChart } from "@eunchurn/windrose";
 import { Rnd } from "react-rnd";
 
 const style = {

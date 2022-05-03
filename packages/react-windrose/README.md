@@ -14,14 +14,14 @@
 ## Installation
 
 ```bash
-npm i react-windrose-chart
+npm i @eunchurn/react-windrose
 ```
 
 ## Usage
 
 ```tsx
 import React from "react";
-import { Chart } from "react-windrose-chart";
+import { Chart } from "@eunchurn/react-windrose";
 
 const data = {
   chartData: [
@@ -90,7 +90,7 @@ check [sample data](stories/data.json)
 - Wind Rose data can be converted by Wind direction(degree) and wind speed data: `{direction: number[], speed: number[]}` to `data: ChartData[]`
 
 ```javascript
-import { caculateWindRose } from "react-windrose-chart";
+import { caculateWindRose } from "@eunchurn/react-windrose";
 
 const data = {
   direction: [270, 256, 240,...],
@@ -132,7 +132,7 @@ const windRoseData = calculateWindRose(data);
 - Classifying direction function only is as:
 
 ```javascript
-import { classifyDir } from "react-windrose-chart";
+import { classifyDir } from "@eunchurn/react-windrose";
 
 const directionCharacter = classifyDir(270);
 // Return : 'W'

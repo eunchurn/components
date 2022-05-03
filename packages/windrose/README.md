@@ -19,13 +19,13 @@
 ### Install
 
 ```bash
-npm install @eunchurn/windrose-chart
+npm install @eunchurn/windrose
 ```
 
 or
 
 ```bash
-yarn install @eunchurn/windrose-chart
+yarn install @eunchurn/windrose
 ```
 
 ### React Component (defaultProps)
@@ -33,7 +33,7 @@ yarn install @eunchurn/windrose-chart
 - Refer `DefaultProps.tsx` data format
 
 ```tsx
-import Chart from "@eunchurn/windrose-chart";
+import Chart from "@eunchurn/windrose";
 
 export default function WindRoseChart() {
   return (
@@ -47,7 +47,7 @@ export default function WindRoseChart() {
 ### React Component (Props)
 
 ```tsx
-import Chart from "@eunchurn/windrose-chart"
+import Chart from "@eunchurn/windrose"
 
 export default function WindRoseChart() {
   return (
@@ -362,7 +362,7 @@ export const DefaultProps = {
 ```
 ## Pull request
 
-Feel free to create a pull request, <https://github.com/eunchurn/windrose-chart/pulls>
+Feel free to create a pull request, <https://github.com/eunchurn/components/pulls>
 
 ## License
 

@@ -4,8 +4,8 @@
 ## Usage
 ### List
 
-- `@eunchurn/react-windrose-chart`
-- `@eunchurn/windrose-chart`
+- `@eunchurn/react-windrose`
+- `@eunchurn/windrose`
 
 
 ## Development
