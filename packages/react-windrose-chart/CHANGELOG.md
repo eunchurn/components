@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/eunchurn/components/compare/v1.2.2...v1.2.3) (2022-05-03)
+
+
+### Bug Fixes
+
+* **typescript:** remove test codes ([50a5855](https://github.com/eunchurn/components/commit/50a5855ac0383ebaa88895a73981302690ded24c))
+
+
+
+
+
 ## [1.2.2](https://github.com/eunchurn/components/compare/v1.2.1...v1.2.2) (2022-05-03)
 
 
