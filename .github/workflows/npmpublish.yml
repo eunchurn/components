@@ -70,6 +70,7 @@ jobs:
           npm config list
           echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
           # npm publish --access public
+          npm config set access public
           yarn lerna:publish:npm
         env:
           CI: true
