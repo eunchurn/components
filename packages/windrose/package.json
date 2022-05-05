@@ -13,6 +13,7 @@
     "url": "git+https://github.com/eunchurn/components.git",
     "directory": "package/exelbid"
   },
+  "license": "MIT",
   "scripts": {
     "tsc": "tsc",
     "watch": "tsc --watch",

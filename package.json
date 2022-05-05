@@ -11,6 +11,7 @@
     "url": "ssh://git@github.com:eunchurn/components.git",
     "directory": "packages/*"
   },
+  "license": "MIT",
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "lerna run start --stream",

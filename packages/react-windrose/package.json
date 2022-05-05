@@ -13,6 +13,7 @@
     "url": "https://github.com/eunchurn/components.git",
     "directory": "packages/react-windrose"
   },
+  "license": "MIT",
   "scripts": {
     "tsc": "tsc",
     "watch": "tsc --watch",
