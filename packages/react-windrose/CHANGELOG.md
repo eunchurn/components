@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.9](https://github.com/eunchurn/components/compare/v1.2.5...v1.2.9) (2022-05-05)
+
+
+### Bug Fixes
+
+* **docs:** images ([113c1a7](https://github.com/eunchurn/components/commit/113c1a7fe7831c141e7f36e10889a32683b626bb))
+
+
+### Features
+
+* **package name:** change ([88d3e0b](https://github.com/eunchurn/components/commit/88d3e0b8e03d9bed9bbc9507799edeae19b85cd8))
+* **package name:** change ([b6da6c3](https://github.com/eunchurn/components/commit/b6da6c31d1aa871969ddf1e2d111d1d3c3f299da))
+
+
+
+
+
 ## [1.2.8](https://github.com/eunchurn/components/compare/v1.2.5...v1.2.8) (2022-05-03)
 
 
