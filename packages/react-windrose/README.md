@@ -1,12 +1,12 @@
 # Windrose Chart Component
 
-[![Unit Test](https://github.com/eunchurn/components/actions/workflows/unit-test.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/unit-test.yml) [![Node.js Package](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml) [![CodeQL](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml) [![codecov](https://codecov.io/gh/eunchurn/components/branch/master/graph/badge.svg?token=XK02PSQ4Ik)](https://codecov.io/gh/eunchurn/components) ![npm](https://img.shields.io/npm/dw/react-windrose) ![NPM](https://img.shields.io/npm/l/react-windrose) [![npm version](https://badge.fury.io/js/react-windrose.svg)](https://badge.fury.io/js/react-windrose) [![GitHub Package Registry version](https://img.shields.io/github/v/release/eunchurn/react-windrosesvg?label=GPR&logo=github)](https://github.com/eunchurn/react-windrose/packages/54428) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Unit Test](https://github.com/eunchurn/components/actions/workflows/unit-test.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/unit-test.yml) [![Node.js Package](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/npmpublish.yml) [![CodeQL](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/eunchurn/components/actions/workflows/codeql-analysis.yml) [![codecov](https://codecov.io/gh/eunchurn/components/branch/main/graph/badge.svg?token=XK02PSQ4Ik)](https://codecov.io/gh/eunchurn/components) ![npm](https://img.shields.io/npm/dw/@eunchurn%2Freact-windrose) [![npm version](https://badge.fury.io/js/@eunchurn%2Freact-windrose.svg)](https://badge.fury.io/js/@eunchurn%2Freact-windrose) [![GitHub version](https://badge.fury.io/gh/eunchurn%2Fcomponents.svg)](https://badge.fury.io/gh/eunchurn%2Fcomponents) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [**Storybook**](https://eunchurn.github.io/react-windrose-chart/)
 
 ## Features
 
-![react-windrose-chart](./doc/images/react-windrose-chart.png)
+![react-windrose-chart](https://raw.githubusercontent.com/eunchurn/components/main/packages/react-windrose/doc/images/react-windrose-chart.png)
 
 - [D3js](https://d3js.org/) (Javascript library for manipulating documents based on data) implemented SVG rendering
 - Inspired from [ssmaroju](https://bl.ocks.org/ssmaroju)'s [Wind Rose Plot](https://bl.ocks.org/ssmaroju/96af159c1872c2928a972c441bccaf50)
@@ -142,7 +142,7 @@ const directionCharacter = classifyDir(270);
 
 Real-Time chart data from Anemometer
 
-![realtime-chart](doc/images/realtime.gif)
+![realtime-chart](https://raw.githubusercontent.com/eunchurn/components/main/packages/react-windrose/doc/images/realtime.gif)
 
 ## License
 
