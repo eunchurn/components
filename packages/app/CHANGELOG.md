@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.10](https://github.com-eunchurn/eunchurn/components/compare/v1.2.5...v1.2.10) (2022-05-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to v13.2.0 ([53e7928](https://github.com-eunchurn/eunchurn/components/commit/53e7928001deb5a744e1606f360c0e3aaa8f6746))
+
+
+### Features
+
+* **package name:** change ([88d3e0b](https://github.com-eunchurn/eunchurn/components/commit/88d3e0b8e03d9bed9bbc9507799edeae19b85cd8))
+* **package name:** change ([b6da6c3](https://github.com-eunchurn/eunchurn/components/commit/b6da6c31d1aa871969ddf1e2d111d1d3c3f299da))
+
+
+
+
+
 ## [1.2.9](https://github.com-eunchurn/eunchurn/components/compare/v1.2.5...v1.2.9) (2022-05-05)
 
 

@@ -1,10 +1,10 @@
 {
   "name": "app",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "private": true,
   "dependencies": {
-    "@eunchurn/react-windrose": "^1.2.9",
-    "@eunchurn/windrose": "^1.2.9",
+    "@eunchurn/react-windrose": "^1.2.10",
+    "@eunchurn/windrose": "^1.2.10",
     "@material-ui/core": "4.12.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
