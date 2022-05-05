@@ -14,7 +14,7 @@ yarn install @eunchurn/react-windrose
 ```
 
 ### [`@eunchurn/windrose`](https://github.com/eunchurn/components/packages/1399469)
-![npm](https://img.shields.io/npm/dw/@eunchurn%2Fwindrose) [![npm version](https://badge.fury.io/js/@eunchurn%2Fwindrose.svg)](https://badge.fury.io/js/@eunchurn%2Fwindrose) [![GitHub version](https://badge.fury.io/gh/eunchurn%2Fcomponents.svg)](https://badge.fury.io/gh/eunchurn%2Fcomponents) [![npm version](https://badge.fury.io/js/%40eunchurn%2Fwindrose.svg)](https://badge.fury.io/js/%40eunchurn%2Fwindrose) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![npm](https://img.shields.io/npm/dw/@eunchurn%2Fwindrose) [![npm version](https://badge.fury.io/js/@eunchurn%2Fwindrose.svg)](https://badge.fury.io/js/@eunchurn%2Fwindrose) [![GitHub version](https://badge.fury.io/gh/eunchurn%2Fcomponents.svg)](https://badge.fury.io/gh/eunchurn%2Fcomponents) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - INPUT: Professionals respond to survey of how much they use a K-12 core competancy in each subject
 - OUTPUT: Interdisciplinarity Badge (ideally with mouseover tooltips). Wind-rose type graphic, displaying survey response magnitudes for each subject area core competency
