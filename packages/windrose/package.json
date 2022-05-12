@@ -48,6 +48,6 @@
   },
   "resolutions": {
     "@types/react": "16.14.26",
-    "@types/react-dom": "16.9.15"
+    "@types/react-dom": "16.9.16"
   }
 }
