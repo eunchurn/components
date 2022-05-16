@@ -37,7 +37,7 @@
     "release": "standard-version"
   },
   "devDependencies": {
-    "@monorepo-utils/collect-changelog": "2.7.0",
+    "@monorepo-utils/collect-changelog": "2.8.1",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
     "@testing-library/react-hooks": "8.0.0",
