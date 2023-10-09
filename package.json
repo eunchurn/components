@@ -45,7 +45,7 @@
     "jest": "28.1.2",
     "lerna": "5.1.6",
     "standard-version": "9.5.0",
-    "ts-jest": "28.0.5"
+    "ts-jest": "28.0.8"
   },
   "resolutions": {
     "@types/react": "18.0.14",
