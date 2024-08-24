@@ -1,23 +1,23 @@
-import { __makeTemplateObject } from "tslib";
+import { __assign, __makeTemplateObject } from "tslib";
 import * as React from "react";
 import * as d3 from "d3";
 import styled from "styled-components";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import { DefaultProps } from "./DefaultProps";
 import { isNull } from "lodash";
 import { useResponsive } from "./hooks";
 export function Chart(props) {
-    var propWidth = props.width, propHeight = props.height, data = props.chartData, columns = props.columns, z = props.columnsColor, angles = props.angles, dataMax = props.dataMax, dataKeys = props.dataKeys, mouseOverColor = props.mouseOverColor, mouseOverTitleColor = props.mouseOverTitleColor, mouseOverSurveyColor = props.mouseOverSurveyColor, responsive = props.responsive, legendGap = props.legendGap;
+    var _a = __assign(__assign({}, DefaultProps), props), propWidth = _a.width, propHeight = _a.height, data = _a.chartData, columns = _a.columns, z = _a.columnsColor, angles = _a.angles, dataMax = _a.dataMax, dataKeys = _a.dataKeys, mouseOverColor = _a.mouseOverColor, mouseOverTitleColor = _a.mouseOverTitleColor, mouseOverSurveyColor = _a.mouseOverSurveyColor, responsive = _a.responsive, legendGap = _a.legendGap;
     var containerRef = React.useRef(null);
     var axisContainerRef = React.useRef(null);
     var containerSize = useResponsive(axisContainerRef, {
         width: propWidth,
         height: propHeight,
     });
-    var _a = React.useState({
+    var _b = React.useState({
         width: propWidth,
         height: propHeight,
-    }), size = _a[0], setSize = _a[1];
+    }), size = _b[0], setSize = _b[1];
     React.useEffect(function () {
         var width = containerSize.width, height = containerSize.height;
         if (responsive) {
@@ -97,7 +97,8 @@ export function Chart(props) {
             .attr("transform", "rotate(".concat(angleOffset, ")"))
             .attr("fill", function (d) { return d.data.color; })
             .attr("class", function (_d, i) { return "arc_".concat(i); })
-            .attr("data-tip", function (item) {
+            .attr("data-tooltip-id", "segment-tooltip")
+            .attr("data-tooltip-content", function (item) {
             return "".concat(item.data.coreCompetency, "@").concat(item.data.survey);
         })
             .on("mouseover", function (_event, _d) {
@@ -169,16 +170,17 @@ export function Chart(props) {
             .style("font-size", 12);
         g.exit().remove();
     }, [containerSize.width]);
-    React.useEffect(function () {
-        ReactTooltip.rebuild();
-    }, [containerSize.width]);
+    // React.useEffect(() => {
+    //   // Tooltip.rebuild();
+    // }, [containerSize.width]);
     return (React.createElement(AxisContainer, { ref: axisContainerRef, role: "main" },
         React.createElement(Axis, { className: "axis", width: size.width, height: size.height, ref: containerRef, role: "document" }),
-        React.createElement(ReactTooltip, { multiline: true, getContent: function (dataTip) {
-                if (isNull(dataTip))
-                    return "";
-                var title = dataTip.split("@")[0];
-                var survey = dataTip.split("@")[1];
+        React.createElement(Tooltip, { id: "segment-tooltip", render: function (_a) {
+                var content = _a.content;
+                if (isNull(content))
+                    return React.createElement(React.Fragment, null);
+                var title = content.split("@")[0];
+                var survey = content.split("@")[1];
                 return (React.createElement("div", null,
                     React.createElement("p", { style: {
                             color: mouseOverTitleColor,
@@ -188,26 +190,13 @@ export function Chart(props) {
                             color: mouseOverSurveyColor,
                             fontSize: "1.5em",
                         } }, survey)));
-            }, type: "light", effect: "float", delayHide: 100 })));
+            }, 
+            // type="light"
+            // effect="float"
+            delayHide: 100, openEvents: { mouseover: true, focus: false }, closeEvents: { mouseout: true, blur: false } })));
 }
 export var AxisContainer = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 100%;\n  height: auto;\n  aspect-ratio: 1/1;\n"], ["\n  width: 100%;\n  height: auto;\n  aspect-ratio: 1/1;\n"])));
 export var Axis = styled.svg(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  .axis {\n    stroke: gray;\n  }\n"], ["\n  .axis {\n    stroke: gray;\n  }\n"])));
-var chartData = DefaultProps.chartData, angles = DefaultProps.angles, columns = DefaultProps.columns, columnsColor = DefaultProps.columnsColor, width = DefaultProps.width, height = DefaultProps.height, dataMax = DefaultProps.dataMax, dataKeys = DefaultProps.dataKeys, mouseOverColor = DefaultProps.mouseOverColor, mouseOverTitleColor = DefaultProps.mouseOverTitleColor, mouseOverSurveyColor = DefaultProps.mouseOverSurveyColor, responsive = DefaultProps.responsive, legendGap = DefaultProps.legendGap;
-Chart.defaultProps = {
-    chartData: chartData,
-    dataMax: dataMax,
-    angles: angles,
-    columns: columns,
-    columnsColor: columnsColor,
-    width: width,
-    height: height,
-    dataKeys: dataKeys,
-    mouseOverColor: mouseOverColor,
-    mouseOverTitleColor: mouseOverTitleColor,
-    mouseOverSurveyColor: mouseOverSurveyColor,
-    responsive: responsive,
-    legendGap: legendGap,
-};
 export default Chart;
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Chart.js.map

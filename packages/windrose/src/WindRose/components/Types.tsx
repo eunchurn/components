@@ -11,49 +11,49 @@ export interface DataType {
 // };
 
 interface State extends React.HTMLProps<HTMLDivElement> {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }
 
 export interface PropType extends State {
   /**
    * Professionals respond to survey of how much they use a K-12 core competancy in each subject
    */
-  chartData: DataType[];
+  chartData?: DataType[];
   /**
    * Subjects
    */
-  columns: string[];
+  columns?: string[];
   /**
    * Subjects colors
    */
-  columnsColor: string[];
+  columnsColor?: string[];
   /**
    * All core competency
    */
-  angles: string[];
+  angles?: string[];
   /**
    * Max score
    */
-  dataMax: number;
+  dataMax?: number;
   /**
    * Target data keys
    */
-  dataKeys: string[];
+  dataKeys?: string[];
   /**
    * Mouse over Path color
    */
-  mouseOverColor: string;
+  mouseOverColor?: string;
   /**
    * Mouse over competency text color
    */
-  mouseOverTitleColor: string;
+  mouseOverTitleColor?: string;
   /**
    * Mouseover survey score text color
    */
-  mouseOverSurveyColor: string;
+  mouseOverSurveyColor?: string;
   /* A boolean that is used to determine if the chart is responsive or not. */
-  responsive: boolean;
+  responsive?: boolean;
   /* width gap pixels between chart and legend */
-  legendGap: number;
+  legendGap?: number;
 }

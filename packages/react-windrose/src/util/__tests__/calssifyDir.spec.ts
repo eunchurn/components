@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { classifyDir } from "../index";
 import { Direction } from "../../WindRose/Types";
 

@@ -1,4 +1,7 @@
-import { Direction, Count, ChartData } from "../WindRose/Types";
+import { Direction, Count, ChartData, DirectionCount } from "../WindRose/Types";
+
+type CountKey = keyof Count;
+type DirectionCountKey = keyof DirectionCount;
 
 export const countPush = (count: Count, dir: Direction, speed: number) => {
   if (speed < 1) {
@@ -60,7 +63,7 @@ export const classifyDir = (direction: number): Direction => {
   return dir;
 };
 
-type Data = {
+export type Data = {
   direction: number[];
   speed: number[];
 };
@@ -72,16 +75,18 @@ export function calculateWindRose(data: Data): ChartData[] {
     const dir = classifyDir(direction);
     return countPush(count, dir, speed);
   });
-  const ret = Object.keys(count).map((key) => {
+  const ret = (Object.keys(count) as CountKey[]).map((key) => {
     let total = 0;
-    const elements = Object.keys(count[key]).map((subkey) => {
-      const E = count[key][subkey] / dataLength;
-      total += E;
-      return { [subkey]: E };
-    });
-    const obj = {};
+    const elements = (Object.keys(count[key]) as DirectionCountKey[]).map(
+      (subkey: keyof DirectionCount) => {
+        const E = count[key][subkey] / dataLength;
+        total += E;
+        return { [subkey]: E } as { [key in keyof DirectionCount]: number };
+      }
+    );
+    const obj: Partial<DirectionCount> = {};
     elements.map((val) => {
-      const [elKey] = Object.keys(val);
+      const [elKey] = Object.keys(val) as (keyof DirectionCount)[];
       const [elVal] = Object.values(val);
       obj[elKey] = elVal;
       return obj;

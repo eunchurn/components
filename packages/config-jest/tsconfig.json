@@ -1,0 +1,9 @@
+{
+  "extends": "@eunchurn/typescript-config/node.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist/**/*"]
+}

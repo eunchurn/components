@@ -1,4 +1,4 @@
-type DirectionCount = {
+export type DirectionCount = {
   "0-1": number;
   "1-2": number;
   "2-3": number;
@@ -58,30 +58,6 @@ export type Count = {
   NNW: DirectionCount;
 };
 
-// export type Direction = typeof Direction[keyof typeof Direction];
-// export type Direction = keyof typeof Direction;
-
-// export const ChartPropTypes = {
-//   data: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       "0-1": PropTypes.number.isRequired,
-//       "1-2": PropTypes.number.isRequired,
-//       "2-3": PropTypes.number.isRequired,
-//       "3-4": PropTypes.number.isRequired,
-//       "4-5": PropTypes.number.isRequired,
-//       "5-6": PropTypes.number.isRequired,
-//       "6-7": PropTypes.number.isRequired,
-//       "7+": PropTypes.number.isRequired,
-//       angle: PropTypes.string.isRequired,
-//       total: PropTypes.number.isRequired,
-//     }).isRequired,
-//   ).isRequired,
-//   columns: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-//   width: PropTypes.number,
-//   height: PropTypes.number,
-// };
-
-// export type DataType = DirectionCount & { angle: Direction; total: number }[];
 export type DataTypes = { [key: string]: number }[];
 
 type Angle =
@@ -115,17 +91,15 @@ export type ChartData = {
 };
 
 export type Column = keyof ChartData;
-
-export interface ChartPropTypes extends React.HTMLProps<HTMLDivElement> {
-  // data: DirectionCount & { angle: Direction; total: number }[];
-  chartData: ChartData[];
-  // columns: string[];
-  columns: string[];
-  width: number;
-  height: number;
-  responsive: boolean;
-  legendGap: number;
-}
+export type ChartPropsOnly = {
+  chartData?: ChartData[];
+  columns?: string[];
+  width?: number;
+  height?: number;
+  responsive?: boolean;
+  legendGap?: number;
+};
+export type ChartPropTypes = ChartPropsOnly & React.HTMLProps<HTMLDivElement>;
 
 export const ChartDefaultProps: ChartPropTypes = {
   width: 600,
@@ -330,7 +304,7 @@ export const ChartDefaultProps: ChartPropTypes = {
 };
 
 export interface DataType {
-  [key: string]: number | null;
+  [key: string]: number;
 }
 
 // export type DataTypes = typeof ChartDefaultProps;

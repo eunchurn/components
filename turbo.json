@@ -1,0 +1,42 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local",
+    ".env"
+  ],
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ],
+      "outputLogs": "new-only"
+    },
+    "lint": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "cache": false
+    },
+    "test": {
+      "cache": true,
+      "outputs": ["coverage/**"],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test:ci": {
+      "cache": false
+    },
+    "test:update:snapshot": {},
+    "sync:assets": {},
+    "storybook": {}
+  }
+}

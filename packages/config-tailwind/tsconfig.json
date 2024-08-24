@@ -1,0 +1,8 @@
+{
+  "extends": "@eunchurn/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "Preserve"
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

@@ -1,3 +1,20 @@
 {
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "explorer.fileNesting.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "yaml.extension.recommendations": false,
+  "git.detectSubmodulesLimit": 30,
+  "[yaml]": {
+    "editor.autoIndent": "advanced",
+    "editor.formatOnSave": false
+  },
+  "[github-actions-workflow]": {
+    "editor.autoIndent": "advanced"
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -1,27 +1,8 @@
 {
+  "extends": "@eunchurn/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./lib",
-    "module": "esnext",
-    "target": "es5",
-    "lib": ["es6", "dom", "ESNext"],
-    "sourceMap": true,
-    "jsx": "react",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    // "noImplicitAny": true,
-    "importHelpers": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": false,
-    "declaration": true,
-    "declarationMap": true,
-    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "lib",

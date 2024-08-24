@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as d3 from "d3";
 import styled from "styled-components";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import { DefaultProps } from "./DefaultProps";
 import { PropType, DataType } from "./Types";
 import { isNull } from "lodash";
@@ -22,7 +22,7 @@ export function Chart(props: PropType): JSX.Element {
     mouseOverSurveyColor,
     responsive,
     legendGap,
-  } = props;
+  } = { ...DefaultProps, ...props } as Required<PropType>;
   const containerRef = React.useRef<SVGSVGElement>(null);
   const axisContainerRef = React.useRef<HTMLDivElement>(null);
   const containerSize = useResponsive(axisContainerRef, {
@@ -115,8 +115,9 @@ export function Chart(props: PropType): JSX.Element {
       .attr("transform", `rotate(${angleOffset})`)
       .attr("fill", (d: d3.SeriesPoint<DataType>) => d.data.color)
       .attr("class", (_d: d3.SeriesPoint<DataType>, i: number) => `arc_${i}`)
+      .attr("data-tooltip-id", "segment-tooltip")
       .attr(
-        "data-tip",
+        "data-tooltip-content",
         (item: d3.SeriesPoint<DataType>) =>
           `${item.data.coreCompetency}@${item.data.survey}`
       )
@@ -209,9 +210,9 @@ export function Chart(props: PropType): JSX.Element {
       .style("font-size", 12);
     g.exit().remove();
   }, [containerSize.width]);
-  React.useEffect(() => {
-    ReactTooltip.rebuild();
-  }, [containerSize.width]);
+  // React.useEffect(() => {
+  //   // Tooltip.rebuild();
+  // }, [containerSize.width]);
   return (
     <AxisContainer ref={axisContainerRef} role="main">
       <Axis
@@ -221,12 +222,12 @@ export function Chart(props: PropType): JSX.Element {
         ref={containerRef}
         role="document"
       />
-      <ReactTooltip
-        multiline
-        getContent={(dataTip: string) => {
-          if (isNull(dataTip)) return "";
-          const title = dataTip.split("@")[0];
-          const survey = dataTip.split("@")[1];
+      <Tooltip
+        id="segment-tooltip"
+        render={({ content }) => {
+          if (isNull(content)) return <></>;
+          const title = content.split("@")[0];
+          const survey = content.split("@")[1];
           return (
             <div>
               <p
@@ -248,9 +249,11 @@ export function Chart(props: PropType): JSX.Element {
             </div>
           );
         }}
-        type="light"
-        effect="float"
+        // type="light"
+        // effect="float"
         delayHide={100}
+        openEvents={{ mouseover: true, focus: false }}
+        closeEvents={{ mouseout: true, blur: false }}
       />
     </AxisContainer>
   );
@@ -267,37 +270,5 @@ export const Axis = styled.svg`
     stroke: gray;
   }
 `;
-
-const {
-  chartData,
-  angles,
-  columns,
-  columnsColor,
-  width,
-  height,
-  dataMax,
-  dataKeys,
-  mouseOverColor,
-  mouseOverTitleColor,
-  mouseOverSurveyColor,
-  responsive,
-  legendGap,
-} = DefaultProps;
-
-Chart.defaultProps = {
-  chartData,
-  dataMax,
-  angles,
-  columns,
-  columnsColor,
-  width,
-  height,
-  dataKeys,
-  mouseOverColor,
-  mouseOverTitleColor,
-  mouseOverSurveyColor,
-  responsive,
-  legendGap,
-};
 
 export default Chart;

@@ -2,7 +2,7 @@
 import React from "react";
 import * as d3 from "d3";
 import { AxisContainer, Axis } from "./WindRoseChart.style";
-import { ChartPropTypes, ChartDefaultProps, DataType } from "./Types";
+import { ChartPropTypes, ChartPropsOnly, ChartDefaultProps, DataType } from "./Types";
 import { useResponsive } from "./hooks";
 
 export function Chart(props: ChartPropTypes) {
@@ -13,7 +13,8 @@ export function Chart(props: ChartPropTypes) {
     columns,
     responsive,
     legendGap,
-  } = props;
+    ...restProps
+  } = { ...ChartDefaultProps, ...props } as Required<ChartPropsOnly> & ChartPropTypes;
   const containerRef = React.useRef<SVGSVGElement>(null);
   const axisContainerRef = React.useRef<HTMLDivElement>(null);
   const containerSize = useResponsive(axisContainerRef, {
@@ -217,9 +218,9 @@ export function Chart(props: ChartPropTypes) {
       .text((d) => d)
       .style("font-size", 12);
     g.exit().remove();
-  }, [containerSize.width]);
+  }, [containerSize.width, data]);
   return (
-    <AxisContainer ref={axisContainerRef}>
+    <AxisContainer ref={axisContainerRef} {...restProps}>
       <Axis
         className="axis"
         width={size.width}
@@ -229,5 +230,3 @@ export function Chart(props: ChartPropTypes) {
     </AxisContainer>
   );
 }
-
-Chart.defaultProps = ChartDefaultProps;

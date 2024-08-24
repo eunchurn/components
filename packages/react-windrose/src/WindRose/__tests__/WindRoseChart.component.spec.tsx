@@ -1,15 +1,17 @@
-import "jest-styled-components";
+import { describe, it, expect, vi } from "vitest";
+// import "jest-styled-components";
 import React from "react";
 import { isPortal, isFragment } from "react-is";
 import { render } from "@testing-library/react";
 import { Chart } from "../WindRoseChart.component";
 
+
 window.ResizeObserver =
   window.ResizeObserver ||
-  jest.fn().mockImplementation(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
+  vi.fn().mockImplementation(() => ({
+    disconnect: vi.fn(),
+    observe: vi.fn(),
+    unobserve: vi.fn(),
   }));
 
 describe("component <Chart />", () => {
