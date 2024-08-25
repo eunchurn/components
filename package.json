@@ -19,12 +19,12 @@
     "publish-packages": "turbo run build lint test && changeset version && changeset publish"
   },
   "devDependencies": {
-    "changeset": "^0.2.6",
+    "@changesets/cli": "^2.27.7",
+    "@eunchurn/jestconfig": "workspace:*",
     "jest": "29.7.0",
     "ts-jest": "29.2.4",
     "turbo": "^2.0.14",
-    "typescript": "5.5.4",
-    "@eunchurn/jestconfig": "workspace:*"
+    "typescript": "5.5.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
