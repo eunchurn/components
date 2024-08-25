@@ -1,6 +1,5 @@
 "use client";
 
-import { entries } from "lodash";
 import React from "react";
 
 export function useResponsive(

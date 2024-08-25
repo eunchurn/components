@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.4
+
+### Patch Changes
+
+- removed styled-components
+
 ## 1.3.3
 
 ### Patch Changes

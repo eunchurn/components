@@ -1,5 +1,12 @@
 # next-app
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @eunchurn/react-windrose@1.3.4
+
 ## 1.0.4
 
 ### Patch Changes

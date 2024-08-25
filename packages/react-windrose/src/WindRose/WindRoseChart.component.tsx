@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 import * as d3 from "d3";
-import { AxisContainer, Axis } from "./WindRoseChart.style";
 import { ChartPropTypes, ChartPropsOnly, ChartDefaultProps, DataType } from "./Types";
 import { useResponsive } from "./hooks";
 
@@ -220,13 +219,12 @@ export function Chart(props: ChartPropTypes) {
     g.exit().remove();
   }, [containerSize.width, data]);
   return (
-    <AxisContainer ref={axisContainerRef} {...restProps}>
-      <Axis
-        className="axis"
+    <div ref={axisContainerRef} {...restProps}>
+      <svg
         width={size.width}
         height={size.height}
         ref={containerRef}
       />
-    </AxisContainer>
+    </div>
   );
 }

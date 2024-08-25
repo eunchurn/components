@@ -6,6 +6,12 @@
     "target": "esnext",
     "module": "esnext"
   },
-  "include": ["src"],
-  "exclude": ["lib", "node_modules", "**/__tests__"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "**/__tests__"
+  ]
 }
