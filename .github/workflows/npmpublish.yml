@@ -3,7 +3,7 @@ name: Node.js Package
 on:
   push:
     branches:
-      - main
+    - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -62,6 +62,9 @@ jobs:
     - name: Unit Test
       run: |
         ${{ steps.detect-package-manager.outputs.manager }} test
+    - name: Build
+      run: |
+        ${{ steps.detect-package-manager.outputs.manager }} build --filter "@eunchurn/*"
     - name: Creating .npmrc
       run: |
         cat << EOF > "$HOME/.npmrc"
@@ -73,7 +76,10 @@ jobs:
       id: changesets
       uses: changesets/action@v1
       with:
-        publish: ${{ steps.detect-package-manager.outputs.manager }} publish-packages
+        publish: ${{ steps.detect-package-manager.outputs.manager }} run release
+        version: ${{ steps.detect-package-manager.outputs.manager }} run version
+        commit: 'chore: release package(s)'
+        title: 'chore: release package(s)'
       env:
         GITHUB_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
