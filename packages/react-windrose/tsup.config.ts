@@ -7,10 +7,11 @@ export default defineConfig((options) => ({
   dts: true,
   clean: true,
   sourcemap: true,
+  cjsInterop: true,
   target: "es2022",
   external: ["react", "react/jsx-runtime"],
   minify: !options.watch,
   banner: { js: '"use client";' },
   ...options,
-}));
+}));  
 
