@@ -17,7 +17,7 @@
     "version": "changeset version",
     "release": "changeset publish",
     "build:ci": "turbo run build lint test --filter @eunchurn/react-windrose",
-    "publish-packages": "pnpm build:ci && pnpm run version && pnpm run release"
+    "publish-packages": "pnpm build:ci && changeset version && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
