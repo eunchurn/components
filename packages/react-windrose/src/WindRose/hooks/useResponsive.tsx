@@ -9,7 +9,7 @@ export function useResponsive(
 ) {
   const [size, setSize] = React.useState(initSize);
   const [observer, setObserver] = React.useState<ResizeObserver | null>(null);
-  console.log(size)
+
   React.useEffect(() => {
     if (typeof window !== "object") return;
     const obs = new ResizeObserver((entries) => {

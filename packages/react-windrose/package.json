@@ -1,6 +1,6 @@
 {
   "name": "@eunchurn/react-windrose",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": false,
   "types": "lib/index.d.ts",
   "exports": {

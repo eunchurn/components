@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.3
+
+### Patch Changes
+
+- chore(console): removed
+
 ## 1.3.2
 
 ### Patch Changes
