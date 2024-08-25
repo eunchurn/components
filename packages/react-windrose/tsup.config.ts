@@ -1,5 +1,4 @@
 import { defineConfig } from "tsup";
-import cssModulesPlugin from "esbuild-css-modules-plugin";
 
 export default defineConfig((options) => ({
   entry: ["src/index.ts", "src/**/*.ts", "src/**/*.tsx", "!**/__tests__"],
