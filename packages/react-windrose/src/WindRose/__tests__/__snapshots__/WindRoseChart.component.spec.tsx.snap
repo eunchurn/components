@@ -2,11 +2,8 @@
 
 exports[`component <Chart /> > should render correctly 1`] = `
 <div>
-  <div
-    class="sc-braxZu bzMWcc"
-  >
+  <div>
     <svg
-      class="sc-gJhJTp YzfGu axis"
       height="600"
       width="600"
     >
