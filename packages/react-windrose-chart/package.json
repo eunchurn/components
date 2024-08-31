@@ -1,0 +1,99 @@
+{
+  "name": "react-windrose-chart",
+  "version": "1.0.0",
+  "description": "React Wind Rose Chart Component (D3js implemented SVG rendering)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*/index.mjs",
+      "require": "./dist/*/index.js",
+      "types": "./dist/*/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eunchurn/components.git",
+    "directory": "packages/react-windrose-chart"
+  },
+  "author": {
+    "name": "Eunchurn Park",
+    "email": "eunchurn.park@gmail.com",
+    "url": "https://gitub.com/eunchurn"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eunchurn/components/issues"
+  },
+  "homepage": "https://eunchurn.github.io/react-windrose-chart",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "windrose",
+    "react",
+    "react component",
+    "windrose react",
+    "component",
+    "windrose react component",
+    "windrose rollup react component"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "vite build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.24.7",
+    "@chromatic-com/storybook": "^1.8.0",
+    "@storybook/addon-actions": "8.2.9",
+    "@storybook/addon-console": "3.0.0",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/addon-viewport": "8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/storybook-deployer": "2.8.16",
+    "@storybook/test": "^8.2.9",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "22.5.1",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "@types/react-is": "18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "react-is": "18.3.1",
+    "storybook": "^8.2.9",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "tslib": "2.7.0",
+    "tsup": "^8.2.4",
+    "typescript": "5.5.4",
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.0.3",
+    "vitest": "^2.0.5"
+  }
+}
