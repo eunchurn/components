@@ -47,7 +47,7 @@
     "windrose rollup react component"
   ],
   "scripts": {
-    "dev": "tsup --watch",
+    "dev": "vite",
     "build": "vite build",
     "test": "vitest",
     "typecheck": "tsc --noEmit",

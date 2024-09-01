@@ -1,0 +1,17 @@
+{
+  "extends": "@eunchurn/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "target": "esnext",
+    "module": "esnext"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "**/__tests__"
+  ]
+}
