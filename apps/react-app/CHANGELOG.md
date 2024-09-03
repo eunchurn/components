@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.2.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @eunchurn/react-windrose@1.3.5
+
 ## 1.2.15
 
 ### Patch Changes
