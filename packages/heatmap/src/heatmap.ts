@@ -8,7 +8,7 @@ interface HeatmapDataPoint {
 
 class HeatmapChart {
   private config: HeatmapChartConfig;
-  private cvNode: HTMLCanvasElement;
+  private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private data: Map<number, HeatmapDataPoint> = new Map();
   private endTime: number = Date.now();
@@ -49,15 +49,15 @@ class HeatmapChart {
     if (!(canvas instanceof HTMLCanvasElement)) {
       throw new Error(`Element with id '${id}' is not a canvas element`);
     }
-    this.cvNode = canvas;
-    const context = this.cvNode.getContext("2d");
+    this.canvas = canvas;
+    const context = this.canvas.getContext("2d");
     if (!context) {
       throw new Error("Unable to get 2D context from canvas");
     }
     this.ctx = context;
     this.dragCallback = config.dragCallback;
     this.remainDrag = config.remainDrag || false;
-    this.theme = config.theme || "wh";
+    this.theme = config.theme || "light";
     this.moveListener = this.mouseMove.bind(this);
     this.upListener = this.mouseUp.bind(this);
     this.initParams();
@@ -80,10 +80,10 @@ class HeatmapChart {
   private sizeCanvas(): void {
     const { width, height } = this.config;
     const ratio = window.devicePixelRatio || 1;
-    this.cvNode.width = (width || this.cvNode.clientWidth) * ratio;
-    this.cvNode.height = (height || this.cvNode.clientHeight) * ratio;
-    this.cvNode.style.width = `${width || this.cvNode.clientWidth}px`;
-    this.cvNode.style.height = `${height || this.cvNode.clientHeight}px`;
+    this.canvas.width = (width || this.canvas.clientWidth) * ratio;
+    this.canvas.height = (height || this.canvas.clientHeight) * ratio;
+    this.canvas.style.width = `${width || this.canvas.clientWidth}px`;
+    this.canvas.style.height = `${height || this.canvas.clientHeight}px`;
     this.ctx.scale(ratio, ratio);
   }
 
@@ -122,7 +122,7 @@ class HeatmapChart {
 
   private draw(): void {
     // Clear canvas
-    this.ctx.clearRect(0, 0, this.cvNode.width, this.cvNode.height);
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     // Calculate chart dimensions
     this.calculateChartDimensions();
@@ -175,7 +175,7 @@ class HeatmapChart {
     this.draw();
   }
   private calculateChartDimensions(): void {
-    const { width, height } = this.cvNode;
+    const { width, height } = this.canvas;
     this.chartAttr = {
       x: 40,
       y: 20,
@@ -199,6 +199,7 @@ class HeatmapChart {
     for (let i = 0; i <= 5; i++) {
       const y =
         this.chartAttr.y + this.chartAttr.h - (i / 5) * this.chartAttr.h;
+      this.ctx.fillStyle = "#000000";
       this.ctx.fillText(String((this.yValueMax * i) / 5), 5, y);
     }
 
@@ -210,6 +211,7 @@ class HeatmapChart {
     for (let i = 0; i <= 5; i++) {
       const x = this.chartAttr.x + (i / 5) * this.chartAttr.w;
       const time = new Date(this.endTime - (1 - i / 5) * this.xTimeRange);
+      this.ctx.fillStyle = "#000000";
       this.ctx.fillText(
         timeFormat.format(time),
         x,
@@ -263,7 +265,7 @@ class HeatmapChart {
       });
     });
   }
-  private drawNemo(
+  private drawRect(
     color: string,
     x: number,
     y: number,
@@ -464,7 +466,7 @@ class HeatmapChart {
 
   private mouseMove(e: MouseEvent): void {
     if (this.mouse.drag === true) {
-      const clientRect = this.cvNode.getBoundingClientRect();
+      const clientRect = this.canvas.getBoundingClientRect();
       this.mouse.x2 = e.clientX - clientRect.left;
       this.mouse.y2 = e.clientY - clientRect.top;
       this.draw();
@@ -492,7 +494,7 @@ class HeatmapChart {
   }
 
   private initCanvasListener(): void {
-    this.cvNode.onmousedown = (e: MouseEvent) => {
+    this.canvas.onmousedown = (e: MouseEvent) => {
       this.staticDraw = false;
 
       if (!this.mouse.drag) {
@@ -509,8 +511,8 @@ class HeatmapChart {
       this.mouse.drag = true;
     };
 
-    this.cvNode.onmouseover = (e: MouseEvent) => {
-      this.cvNode.style.cursor = "crosshair";
+    this.canvas.onmouseover = (e: MouseEvent) => {
+      this.canvas.style.cursor = "crosshair";
       if (this.mouse.drag) {
         this.mouse.down = true;
       }

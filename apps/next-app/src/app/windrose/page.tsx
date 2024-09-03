@@ -3,13 +3,32 @@
 import { Chart, calculateWindRose, ChartData } from "@eunchurn/react-windrose";
 import { ApiData } from "./_types";
 import React from "react";
-import { Gradient } from "@/components"
+import { Gradient } from "@/components";
 
 export default function Page(): JSX.Element {
-  const [chartData, setChartData] = React.useState<ChartData[]>([]);
+  const [chartData, setChartData] = React.useState<ChartData[]>([
+    {
+      angle: "N",
+      "0-1": 0,
+      "1-2": 0,
+      "2-3": 0,
+      "3-4": 0,
+      "4-5": 0,
+      "5-6": 0,
+      "6-7": 0,
+      "7+": 0,
+      total: 0,
+    },
+  ]);
+  const [location, setLocation] = React.useState<GeolocationPosition>();
+  const [geoposition, setGeoposition] = React.useState({
+    lat: 37.5326,
+    lon: 127.024612,
+  });
   React.useEffect(() => {
+    const { lat, lon } = geoposition;
     fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=wind_speed_10m,wind_direction_10m"
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=wind_speed_10m,wind_direction_10m`
     )
       .then((res) => res.json() as Promise<ApiData>)
       .then((data) => {
@@ -23,7 +42,26 @@ export default function Page(): JSX.Element {
           })
         );
       });
-  }, []);
+  }, [geoposition]);
+
+  React.useEffect(() => {
+    if (!navigator.geolocation) return;
+
+    const navId = navigator.geolocation.watchPosition(
+      (position) => {
+        setLocation(position);
+        setGeoposition({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+        });
+      },
+      console.error,
+      { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
+    );
+    return () => {
+      navigator.geolocation.clearWatch(navId);
+    };
+  }, [navigator]);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
@@ -54,7 +92,7 @@ export default function Page(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left" />
+      <div className="mt-32 text-center w-full">{`Lattitude: ${geoposition.lat}, Longitude: ${geoposition.lon} `}</div>
     </main>
   );
 }

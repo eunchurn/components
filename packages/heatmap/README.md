@@ -1,13 +1,17 @@
 # React Heatmap Component
 
+![npm](https://img.shields.io/npm/dw/@eunchurn%2Fheatmap) [![npm version](https://badge.fury.io/js/@eunchurn%2Fheatmap.svg)](https://badge.fury.io/js/@eunchurn%2Fheatmap) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A flexible and interactive heatmap component for React applications, built with D3.js and TypeScript.
+
+[**DEMO**(Nextjs)](https://stackblitz.com/edit/nextjs-heatmap-chart?file=app%2Fpage.tsx)
 
 ## Features
 
 - Visualize data intensity with a color-coded grid
 - Customizable time range and interval
 - Configurable color schemes for hit and error data
-- Interactive zooming and panning
+- Interactive select
 - Responsive design
 
 ## Installation
@@ -20,7 +24,7 @@ npm install @eunchurn/heatmap
 
 ## Usage
 
-Here's a basic example of how to use the HeatmapChart component:
+Here's a basic example of how to use the `HeatmapChart` component:
 
 ```jsx
 import React from 'react';

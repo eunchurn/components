@@ -30,7 +30,7 @@ const generateRandomData = (): HeatmapData => {
 
 const App: React.FC = () => {
   const [data, setData] = useState<HeatmapData>(generateRandomData());
-
+  const [range, setRange] = useState({xStart: 0, xEnd: 0, yStart: 0, yEnd: 0})
   useEffect(() => {
     const interval = setInterval(() => {
       setData(generateRandomData());
@@ -48,17 +48,19 @@ const App: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative flex place-items-center ">
-        <div className="font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col relative z-0">
+      <div className="flex place-items-center ">
+        <div className="font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col  z-0">
           <div className="z-50 flex items-center justify-center w-full">
-            <div className="absolute min-w-[614px] min-h-[614px]">
+            <div className="w-full h-full flex items-center justify-center">
               <HeatmapChart
                 width={800}
                 height={400}
                 data={data}
                 config={{
-                  dragCallback: (...args) => {
-                    console.log(args);
+                  dragCallback: (xRange, yRange) => {
+                    const [xStart, xEnd] = xRange;
+                    const [yStart, yEnd] = yRange;
+                    setRange({xStart, xEnd, yStart, yEnd})
                   },
                 }}
               />
@@ -77,8 +79,7 @@ const App: React.FC = () => {
           />
         </div>
       </div>
-
-      <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left" />
+      <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">Seleted: {JSON.stringify(range)}</div>
     </main>
   );
 };
