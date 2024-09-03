@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { HitmapChart, HitmapChartConfig } from "./heatmap";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import { HeatmapChart as Heatmap, HeatmapChartConfig } from "./heatmap";
 export * from "./heatmap";
 
 export interface HeatmapData {
@@ -11,7 +11,7 @@ interface HeatmapChartProps {
   width: number;
   height: number;
   data: HeatmapData;
-  config?: HitmapChartConfig;
+  config?: HeatmapChartConfig;
   onChangeYAxis?: (direction: "up" | "down") => void;
   onChangeTheme?: (theme: string) => void;
 }
@@ -25,11 +25,11 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
   onChangeTheme,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [chart, setChart] = useState<HitmapChart | null>(null);
+  const [chart, setChart] = useState<Heatmap | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
-      const defaultConfig: HitmapChartConfig = {
+      const defaultConfig: HeatmapChartConfig = {
         width,
         height,
         xAxis: {
@@ -44,7 +44,7 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
         //   console.log("selected range", xValue, yValue, yValueMax);
         // },
       };
-      const newChart = new HitmapChart(canvasRef.current.id, {
+      const newChart = new Heatmap(canvasRef.current.id, {
         ...defaultConfig,
         ...config,
       });
@@ -57,22 +57,45 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
       chart.loadData(data);
     }
   }, [chart, data]);
-  useEffect(() => {
-    if (chart && onChangeYAxis) {
-      onChangeYAxis = (direction: "up" | "down") => {
-        chart.changeYAxis(direction);
-      };
+  const handleChangeYAxis = useCallback((direction: "up" | "down") => {
+    if (chart) {
+      chart.changeYAxis(direction);
+      if (onChangeYAxis) {
+        onChangeYAxis(direction);
+      }
     }
   }, [chart, onChangeYAxis]);
 
-  useEffect(() => {
-    if (chart && onChangeTheme) {
-      onChangeTheme = (theme: string) => {
-        chart.changeTheme(theme);
-      };
+  const handleChangeTheme = useCallback((theme: string) => {
+    if (chart) {
+      chart.changeTheme(theme);
+      if (onChangeTheme) {
+        onChangeTheme(theme);
+      }
     }
   }, [chart, onChangeTheme]);
-  return <canvas ref={canvasRef} id="heatmapCanvas" />;
+  useEffect(() => {
+    if (chart) {
+      chart.changeYAxis = handleChangeYAxis;
+      chart.changeTheme = handleChangeTheme;
+    }
+  }, [chart, handleChangeYAxis, handleChangeTheme]);
+  // useEffect(() => {
+  //   if (chart && onChangeYAxis) {
+  //     onChangeYAxis = (direction: "up" | "down") => {
+  //       chart.changeYAxis(direction);
+  //     };
+  //   }
+  // }, [chart, onChangeYAxis]);
+
+  // useEffect(() => {
+  //   if (chart && onChangeTheme) {
+  //     onChangeTheme = (theme: string) => {
+  //       chart.changeTheme(theme);
+  //     };
+  //   }
+  // }, [chart, onChangeTheme]);
+  return <canvas ref={canvasRef} id="heatmapCanvas" role="img" />;
 };
 
 export default HeatmapChart;

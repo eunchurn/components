@@ -1,16 +1,16 @@
 import { colors } from "./types";
-import { HitmapChartConfig, DragCallback } from "./types";
+import { HeatmapChartConfig, DragCallback } from "./types";
 
-interface HitmapDataPoint {
+interface HeatmapDataPoint {
   hit: number[];
   err: number[];
 }
 
-class HitmapChart {
-  private config: HitmapChartConfig;
+class HeatmapChart {
+  private config: HeatmapChartConfig;
   private cvNode: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
-  private data: Map<number, HitmapDataPoint> = new Map();
+  private data: Map<number, HeatmapDataPoint> = new Map();
   private endTime: number = Date.now();
   private xTimeRange: number = 10 * 60 * 1000; // Default to 10 minutes
   private yValueMax: number = 10000; // Default max value
@@ -43,7 +43,7 @@ class HitmapChart {
   private upListener: (e: MouseEvent) => void;
   private theme: string;
 
-  constructor(id: string, config: HitmapChartConfig) {
+  constructor(id: string, config: HeatmapChartConfig) {
     this.config = { ...defaultConfig, ...config };
     const canvas = document.getElementById(id);
     if (!(canvas instanceof HTMLCanvasElement)) {
@@ -395,6 +395,7 @@ class HitmapChart {
     if (Math.abs(p.x2 - p.x1) < 3 || Math.abs(p.y2 - p.y1) < 3) return;
 
     p = this.mousePosAdjust(p);
+
     const etime = this.endTime;
     const stime = etime - this.xTimeRange;
     const yValueMax = this.yValueMax;
@@ -430,7 +431,8 @@ class HitmapChart {
       for (let i = 0; i < 40; i++) {
         if (hit40[i] === 0 && err40[i] === 0) continue;
         const v1 = (yValueMax * i) / 40;
-        if (yVal1 <= v1 && v1 <= yVal2) {
+        const v2 = (yValueMax * (i + 1)) / 40;
+        if (yVal1 <= v2 && v1 <= yVal2) {
           hit += hit40[i];
           err += err40[i];
         }
@@ -538,7 +540,7 @@ class HitmapChart {
     }
   }
 
-  // Helper methods that were previously in hitmapApi
+  // Helper methods that were previously in HeatmapApi
   private range(v: number, min: number, max: number): number {
     if (v < min) return min;
     if (v > max) return max;
@@ -553,15 +555,103 @@ class HitmapChart {
     const h2 = new Array(40).fill(0);
 
     switch (max) {
+      case 120:
+        for (let i = 0; i < 120; i++) {
+          h2[Math.floor(i / 3)] += hit[i] || 0;
+        }
+
+        break;
+
       case 5000:
         for (let i = 0; i < 40; i++) {
           h2[i] += hit[i] || 0;
         }
+
         for (let i = 40; i < 120; i++) {
           h2[39] += hit[i] || 0;
         }
+
         break;
-      // ... other cases ...
+
+      case 10000:
+        for (let i = 0; i < 40; i++) {
+          h2[(i / 2) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 40; i < 60; i++) {
+          h2[i - 20] += hit[i] || 0;
+        }
+
+        for (let i = 60; i < 120; i++) {
+          h2[39] += hit[i] || 0;
+        }
+
+        break;
+
+      case 20000:
+        for (let i = 0; i < 40; i++) {
+          h2[(i / 4) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 40; i < 60; i++) {
+          h2[((i - 20) / 2) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 60; i < 80; i++) {
+          h2[i - 40] += hit[i] || 0;
+        }
+
+        for (let i = 80; i < 120; i++) {
+          h2[39] += hit[i] || 0;
+        }
+
+        break;
+
+      case 40000:
+        for (let i = 0; i < 40; i++) {
+          h2[(i / 8) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 40; i < 60; i++) {
+          h2[((i - 20) / 4) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 60; i < 80; i++) {
+          h2[((i - 40) / 2) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 80; i < 100; i++) {
+          h2[(i - 60) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 100; i < 120; i++) {
+          h2[39] += hit[i] || 0;
+        }
+
+        break;
+
+      case 80000:
+        for (let i = 0; i < 40; i++) {
+          h2[(i / 16) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 40; i < 60; i++) {
+          h2[((i - 20) / 8) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 60; i < 80; i++) {
+          h2[((i - 40) / 4) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 80; i < 100; i++) {
+          h2[((i - 60) / 2) | 0] += hit[i] || 0;
+        }
+
+        for (let i = 100; i < 120; i++) {
+          h2[i - 80] += hit[i] || 0;
+        }
+
+        break;
       default:
         for (let i = 0; i < 40; i++) {
           h2[i] = hit[i];
@@ -572,7 +662,7 @@ class HitmapChart {
   }
 }
 
-const defaultConfig: HitmapChartConfig = {
+const defaultConfig: HeatmapChartConfig = {
   xAxis: {
     timeRange: 10 * 60 * 1000,
     interval: 5000,
@@ -594,4 +684,6 @@ const defaultConfig: HitmapChartConfig = {
   theme: "light",
 };
 
-export { HitmapChart, type HitmapChartConfig };
+export { HeatmapChart, type HeatmapChartConfig };
+
+export default HeatmapChart;

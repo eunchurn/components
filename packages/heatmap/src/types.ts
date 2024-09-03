@@ -4,7 +4,7 @@ export type DragCallback = (
   yValueMax: number
 ) => void;
 
-export interface HitmapChartConfig {
+export interface HeatmapChartConfig {
   hit?: {
     minWidth?: number;
     minHeight?: number;
@@ -50,7 +50,7 @@ export interface HitmapChartConfig {
   cookieId?: string;
 }
 
-export interface HitmapDataPoint {
+export interface HeatmapDataPoint {
   hit: number[];
   err: number[];
   add: (x: number, v: number) => void;
@@ -84,18 +84,18 @@ export interface Colors {
 }
 
 export const colors: Colors = {
-  COLOR_LEGEND_WH: "#000000",
-  COLOR_LEGEND_BK: "#ffffff",
-  COLOR_GUIDE_WH: "#E0E0E0",
-  COLOR_GUIDE_BK: "#3f3f3f",
-  COLOR_RANGE_WH: "#000000",
-  COLOR_RANGE_BK: "#ffffff",
-  COLOR_BORDER_WH: "#000000",
-  COLOR_BORDER_BK: "#C4C4C4",
-  COLOR_BORDER_TOP_WH: "#E0E0E0",
-  COLOR_BORDER_TOP_BK: "#C4C4C4",
-  COLOR_BORDER_BOTTOM_WH: "#000000",
-  COLOR_BORDER_BOTTOM_BK: "#C4C4C4",
-  COLOR_GUIDE_UNIT_WH: "#E3E6EA",
-  COLOR_GUIDE_UNIT_BK: "#3f3f3f",
+  COLOR_LEGEND_LIGHT: "#000000",
+  COLOR_LEGEND_DARK: "#ffffff",
+  COLOR_GUIDE_LIGHT: "#E0E0E0",
+  COLOR_GUIDE_DARK: "#3f3f3f",
+  COLOR_RANGE_LIGHT: "#000000",
+  COLOR_RANGE_DARK: "#ffffff",
+  COLOR_BORDER_LIGHT: "#000000",
+  COLOR_BORDER_DARK: "#C4C4C4",
+  COLOR_BORDER_TOP_LIGHT: "#E0E0E0",
+  COLOR_BORDER_TOP_DARK: "#C4C4C4",
+  COLOR_BORDER_BOTTOM_LIGHT: "#000000",
+  COLOR_BORDER_BOTTOM_DARK: "#C4C4C4",
+  COLOR_GUIDE_UNIT_LIGHT: "#E3E6EA",
+  COLOR_GUIDE_UNIT_DARK: "#3f3f3f",
 };
