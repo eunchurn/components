@@ -134,7 +134,7 @@ describe("HitmapChart", () => {
 
   it("should handle mouse events correctly", () => {
     // Instead of dispatching events, we'll call the event handlers directly
-    const mousedownHandler = (chart as any).cvNode.onmousedown;
+    const mousedownHandler = (chart as any).canvas.onmousedown;
     const mousemoveListener = (chart as any).moveListener;
     const mouseupListener = (chart as any).upListener;
 
