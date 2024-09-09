@@ -30,7 +30,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.10.0",
   "dependencies": {
     "@vitest/coverage-v8": "^2.0.5"
   }
