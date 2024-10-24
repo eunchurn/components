@@ -346,7 +346,7 @@ importers:
         version: 7.25.9(@babel/core@7.25.8)
       '@chromatic-com/storybook':
         specifier: ^3.0.0
-        version: 3.0.0(react@18.3.1)(storybook@8.3.6)
+        version: 3.1.0(react@18.3.1)(storybook@8.3.6)
       '@storybook/addon-actions':
         specifier: 8.3.6
         version: 8.3.6(storybook@8.3.6)
@@ -966,8 +966,8 @@ packages:
   '@changesets/write@0.3.2':
     resolution: {integrity: sha512-kDxDrPNpUgsjDbWBvUo27PzKX4gqeKOlhibaOXDJA6kuBisGqNHv/HwGJrAu8U/dSf8ZEFIeHIPtvSlZI1kULw==}
 
-  '@chromatic-com/storybook@3.0.0':
-    resolution: {integrity: sha512-6o2/RRs59vcPFehnFC/phX+SZK3ByPN3ix7jr+v+pZAMwliDppFF0GEJ4+SKTaoKY8NtPs0JTFDSQnY1YWgK3Q==}
+  '@chromatic-com/storybook@3.1.0':
+    resolution: {integrity: sha512-AM8jDwoBNNwJKgmoWkHIOhu4ObsxvDtOzZC9tPCVEW6P+pFwg5xjSZAQglIE2c8/SsEPSduNdxBt31ES3iDwoA==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
     peerDependencies:
       storybook: ^8.3.0
@@ -3195,8 +3195,8 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  chromatic@11.10.0:
-    resolution: {integrity: sha512-aHlrZn5kq5B2fsqFoO3aTgyxfUxGq3WIux5eoIWCEXzATTxEi9JTtpQumtWPRj14q3FbN2wWnRxyUoxko83oTg==}
+  chromatic@11.15.0:
+    resolution: {integrity: sha512-5WBm+akQnxsdJv7A//XBafYxk88RJYmRjOh61lVitbPCIN2J9jcsQR+hYApnInmQsWRZvO8GKkMy7SdTlnm1dg==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -8193,12 +8193,12 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@chromatic-com/storybook@3.0.0(react@18.3.1)(storybook@8.3.6)':
+  '@chromatic-com/storybook@3.1.0(react@18.3.1)(storybook@8.3.6)':
     dependencies:
       '@storybook/channels': 8.3.6(storybook@8.3.6)
       '@storybook/telemetry': 8.3.6(storybook@8.3.6)
       '@storybook/types': 8.3.6(storybook@8.3.6)
-      chromatic: 11.10.0
+      chromatic: 11.15.0
       filesize: 10.1.6
       jsonfile: 6.1.0
       react-confetti: 6.1.0(react@18.3.1)
@@ -10792,7 +10792,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chromatic@11.10.0: {}
+  chromatic@11.15.0: {}
 
   ci-info@2.0.0: {}
 
