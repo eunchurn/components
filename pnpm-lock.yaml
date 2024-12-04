@@ -69,7 +69,7 @@ importers:
         version: 22.10.1
       '@types/react':
         specifier: ^18.2.61
-        version: 18.3.12
+        version: 18.3.13
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.3.1
@@ -108,8 +108,8 @@ importers:
         specifier: 22.10.1
         version: 22.10.1
       '@types/react':
-        specifier: 18.3.12
-        version: 18.3.12
+        specifier: 18.3.13
+        version: 18.3.13
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
@@ -169,7 +169,7 @@ importers:
         version: 6.6.3
       '@testing-library/react':
         specifier: 16.0.1
-        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: ^14.5.2
         version: 14.5.2(@testing-library/dom@10.4.0)
@@ -239,13 +239,13 @@ importers:
         version: 10.4.0
       '@testing-library/react':
         specifier: ^16.0.0
-        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: 22.10.1
         version: 22.10.1
       '@types/react':
-        specifier: 18.3.12
-        version: 18.3.12
+        specifier: 18.3.13
+        version: 18.3.13
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
@@ -294,13 +294,13 @@ importers:
         version: 10.4.0
       '@testing-library/react':
         specifier: ^16.0.0
-        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: 22.10.1
         version: 22.10.1
       '@types/react':
-        specifier: 18.3.12
-        version: 18.3.12
+        specifier: 18.3.13
+        version: 18.3.13
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
@@ -355,7 +355,7 @@ importers:
         version: 3.0.0(@storybook/addon-actions@8.4.6(storybook@8.4.6(prettier@3.3.3)))(react@18.3.1)
       '@storybook/addon-essentials':
         specifier: ^8.2.9
-        version: 8.4.6(@types/react@18.3.12)(storybook@8.4.6(prettier@3.3.3))
+        version: 8.4.6(@types/react@18.3.13)(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-interactions':
         specifier: ^8.2.9
         version: 8.4.6(storybook@8.4.6(prettier@3.3.3))
@@ -388,13 +388,13 @@ importers:
         version: 10.4.0
       '@testing-library/react':
         specifier: ^16.0.1
-        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: 22.10.1
         version: 22.10.1
       '@types/react':
-        specifier: 18.3.12
-        version: 18.3.12
+        specifier: 18.3.13
+        version: 18.3.13
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
@@ -469,8 +469,8 @@ importers:
         specifier: 4.17.13
         version: 4.17.13
       '@types/react':
-        specifier: 18.3.12
-        version: 18.3.12
+        specifier: 18.3.13
+        version: 18.3.13
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
@@ -2205,8 +2205,8 @@ packages:
   '@types/react-is@18.3.0':
     resolution: {integrity: sha512-KZJpHUkAdzyKj/kUHJDc6N7KyidftICufJfOFpiG6haL/BDQNQt5i4n1XDUL/nDZAtGLHDSWRYpLzKTAKSvX6w==}
 
-  '@types/react@18.3.12':
-    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
+  '@types/react@18.3.13':
+    resolution: {integrity: sha512-ii/gswMmOievxAJed4PAHT949bpYjPKXvXo1v6cRB/kqc2ZR4n+SgyCyvyc5Fec5ez8VnUumI1Vk7j6fRyRogg==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -8137,10 +8137,10 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@mdx-js/react@3.1.0(@types/react@18.3.12)(react@18.3.1)':
+  '@mdx-js/react@3.1.0(@types/react@18.3.13)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
       react: 18.3.1
 
   '@microsoft/api-extractor-model@7.29.8(@types/node@22.10.1)':
@@ -8434,9 +8434,9 @@ snapshots:
       storybook: 8.4.6(prettier@3.3.3)
       ts-dedent: 2.2.0
 
-  '@storybook/addon-docs@8.4.6(@types/react@18.3.12)(storybook@8.4.6(prettier@3.3.3))':
+  '@storybook/addon-docs@8.4.6(@types/react@18.3.13)(storybook@8.4.6(prettier@3.3.3))':
     dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@mdx-js/react': 3.1.0(@types/react@18.3.13)(react@18.3.1)
       '@storybook/blocks': 8.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.6(prettier@3.3.3))
       '@storybook/csf-plugin': 8.4.6(storybook@8.4.6(prettier@3.3.3))
       '@storybook/react-dom-shim': 8.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.6(prettier@3.3.3))
@@ -8447,12 +8447,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@storybook/addon-essentials@8.4.6(@types/react@18.3.12)(storybook@8.4.6(prettier@3.3.3))':
+  '@storybook/addon-essentials@8.4.6(@types/react@18.3.13)(storybook@8.4.6(prettier@3.3.3))':
     dependencies:
       '@storybook/addon-actions': 8.4.6(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-backgrounds': 8.4.6(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-controls': 8.4.6(storybook@8.4.6(prettier@3.3.3))
-      '@storybook/addon-docs': 8.4.6(@types/react@18.3.12)(storybook@8.4.6(prettier@3.3.3))
+      '@storybook/addon-docs': 8.4.6(@types/react@18.3.13)(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-highlight': 8.4.6(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-measure': 8.4.6(storybook@8.4.6(prettier@3.3.3))
       '@storybook/addon-outline': 8.4.6(storybook@8.4.6(prettier@3.3.3))
@@ -8745,14 +8745,14 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/react@16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@testing-library/react@16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@testing-library/dom': 10.4.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     optionalDependencies:
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
       '@types/react-dom': 18.3.1
 
   '@testing-library/user-event@14.5.2(@testing-library/dom@10.4.0)':
@@ -8923,7 +8923,7 @@ snapshots:
 
   '@types/hoist-non-react-statics@3.3.5':
     dependencies:
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
       hoist-non-react-statics: 3.3.2
 
   '@types/istanbul-lib-coverage@2.0.6': {}
@@ -8972,13 +8972,13 @@ snapshots:
 
   '@types/react-dom@18.3.1':
     dependencies:
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
 
   '@types/react-is@18.3.0':
     dependencies:
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
 
-  '@types/react@18.3.12':
+  '@types/react@18.3.13':
     dependencies:
       '@types/prop-types': 15.7.13
       csstype: 3.1.3
@@ -8992,7 +8992,7 @@ snapshots:
   '@types/styled-components@5.1.34':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.5
-      '@types/react': 18.3.12
+      '@types/react': 18.3.13
       csstype: 3.1.3
 
   '@types/stylis@4.2.5': {}
