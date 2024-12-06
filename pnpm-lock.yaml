@@ -250,8 +250,8 @@ importers:
         specifier: 18.3.2
         version: 18.3.2
       '@types/react-is':
-        specifier: 18.3.1
-        version: 18.3.1
+        specifier: 19.0.0
+        version: 19.0.0
       jest-environment-jsdom:
         specifier: 29.7.0
         version: 29.7.0
@@ -305,8 +305,8 @@ importers:
         specifier: 18.3.2
         version: 18.3.2
       '@types/react-is':
-        specifier: 18.3.1
-        version: 18.3.1
+        specifier: 19.0.0
+        version: 19.0.0
       jest-environment-jsdom:
         specifier: 29.7.0
         version: 29.7.0
@@ -399,8 +399,8 @@ importers:
         specifier: 18.3.2
         version: 18.3.2
       '@types/react-is':
-        specifier: 18.3.1
-        version: 18.3.1
+        specifier: 19.0.0
+        version: 19.0.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.7.0
         version: 3.7.2(@swc/helpers@0.5.5)(vite@6.0.3(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)(terser@5.31.6)(yaml@2.6.1))
@@ -2212,8 +2212,8 @@ packages:
   '@types/react-dom@18.3.2':
     resolution: {integrity: sha512-Fqp+rcvem9wEnGr3RY8dYNvSQ8PoLqjZ9HLgaPUOjJJD120uDyOxOjc/39M4Kddp9JQCxpGQbnhVQF0C0ncYVg==}
 
-  '@types/react-is@18.3.1':
-    resolution: {integrity: sha512-zts4lhQn5ia0cF/y2+3V6Riu0MAfez9/LJYavdM8TvcVl+S91A/7VWxyBT8hbRuWspmuCaiGI0F41OJYGrKhRA==}
+  '@types/react-is@19.0.0':
+    resolution: {integrity: sha512-71dSZeeJ0t3aoPyY9x6i+JNSvg5m9EF2i2OlSZI5QoJuI8Ocgor610i+4A10TQmURR+0vLwcVCEYFpXdzM1Biw==}
 
   '@types/react@18.3.14':
     resolution: {integrity: sha512-NzahNKvjNhVjuPBQ+2G7WlxstQ+47kXZNHlUvFakDViuIEfGY926GqhMueQFZ7woG+sPiQKlF36XfrIUVSUfFg==}
@@ -9009,7 +9009,7 @@ snapshots:
     dependencies:
       '@types/react': 18.3.14
 
-  '@types/react-is@18.3.1':
+  '@types/react-is@19.0.0':
     dependencies:
       '@types/react': 18.3.14
 
