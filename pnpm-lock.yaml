@@ -346,7 +346,7 @@ importers:
         version: 7.26.0(@babel/core@7.26.0)
       '@chromatic-com/storybook':
         specifier: ^3.0.0
-        version: 3.2.2(react@18.3.1)(storybook@8.4.7(prettier@3.3.3))
+        version: 3.2.3(react@18.3.1)(storybook@8.4.7(prettier@3.3.3))
       '@storybook/addon-actions':
         specifier: 8.4.7
         version: 8.4.7(storybook@8.4.7(prettier@3.3.3))
@@ -912,8 +912,8 @@ packages:
   '@changesets/write@0.3.2':
     resolution: {integrity: sha512-kDxDrPNpUgsjDbWBvUo27PzKX4gqeKOlhibaOXDJA6kuBisGqNHv/HwGJrAu8U/dSf8ZEFIeHIPtvSlZI1kULw==}
 
-  '@chromatic-com/storybook@3.2.2':
-    resolution: {integrity: sha512-xmXt/GW0hAPbzNTrxYuVo43Adrtjue4DeVrsoIIEeJdGaPNNeNf+DHMlJKOBdlHmCnFUoe9R/0mLM9zUp5bKWw==}
+  '@chromatic-com/storybook@3.2.3':
+    resolution: {integrity: sha512-3+hfANx79kIjP1qrOSLxpoAXOiYUA0S7A0WI0A24kASrv7USFNNW8etR5TjUilMb0LmqKUn3wDwUK2h6aceQ9g==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
@@ -2934,8 +2934,8 @@ packages:
     resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
     engines: {node: '>= 14.16.0'}
 
-  chromatic@11.16.3:
-    resolution: {integrity: sha512-bckarRbZ3M1BvsmhLqEMschuQPk2FlSD9cvy8383JwoVvaIqLr0dv1tI/DPM4LMuXOjTjeBSZZINVH9r3RMiiA==}
+  chromatic@11.20.2:
+    resolution: {integrity: sha512-c+M3HVl5Y60c7ipGTZTyeWzWubRW70YsJ7PPDpO1D735ib8+Lu3yGF90j61pvgkXGngpkTPHZyBw83lcu2JMxA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -7697,9 +7697,9 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@chromatic-com/storybook@3.2.2(react@18.3.1)(storybook@8.4.7(prettier@3.3.3))':
+  '@chromatic-com/storybook@3.2.3(react@18.3.1)(storybook@8.4.7(prettier@3.3.3))':
     dependencies:
-      chromatic: 11.16.3
+      chromatic: 11.20.2
       filesize: 10.1.6
       jsonfile: 6.1.0
       react-confetti: 6.1.0(react@18.3.1)
@@ -9990,7 +9990,7 @@ snapshots:
     dependencies:
       readdirp: 4.0.2
 
-  chromatic@11.16.3: {}
+  chromatic@11.20.2: {}
 
   ci-info@2.0.0: {}
 
