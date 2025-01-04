@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/d3": "7.4.3",
     "@types/jest": "29.5.14",
-    "@types/lodash": "4.17.13",
+    "@types/lodash": "4.17.14",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "@types/styled-components": "5.1.34",
