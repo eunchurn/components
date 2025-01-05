@@ -14,7 +14,7 @@
     "react-rnd": "^10.4.12"
   },
   "devDependencies": {
-    "@types/node": "22.10.2",
+    "@types/node": "22.10.5",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "@types/styled-components": "5.1.34",
