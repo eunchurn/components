@@ -81,7 +81,7 @@ importers:
         version: 8.5.1
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.0.2
+        version: 4.0.3
       typescript:
         specifier: ^5.3.3
         version: 5.7.3
@@ -218,7 +218,7 @@ importers:
         version: link:../config-typescript
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.0.2
+        version: 4.0.3
 
   packages/config-typescript: {}
 
@@ -6358,8 +6358,8 @@ packages:
     resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  tailwindcss@4.0.2:
-    resolution: {integrity: sha512-cjWQjZEbzQNqH4IiSjRcYg96zjlu+rjzTFkqTc/fN3FNnIU4CoNlQvwCsIomwG/2EPWYT9ysFL1QF6Av3fZeNg==}
+  tailwindcss@4.0.3:
+    resolution: {integrity: sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -14327,7 +14327,7 @@ snapshots:
       '@pkgr/core': 0.1.1
       tslib: 2.8.1
 
-  tailwindcss@4.0.2: {}
+  tailwindcss@4.0.3: {}
 
   tapable@2.2.1: {}
 
