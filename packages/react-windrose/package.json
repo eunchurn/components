@@ -51,7 +51,7 @@
     "@types/react-is": "19.0.0",
     "jest-environment-jsdom": "29.7.0",
     "react-is": "18.3.1",
-    "ts-jest": "29.2.5",
+    "ts-jest": "29.2.6",
     "ts-node": "10.9.2",
     "tslib": "2.8.1",
     "tsup": "^8.2.4",
