@@ -81,7 +81,7 @@
     "@testing-library/react": "^16.0.1",
     "@types/node": "22.13.17",
     "@types/react": "18.3.20",
-    "@types/react-dom": "18.3.5",
+    "@types/react-dom": "18.3.6",
     "@types/react-is": "19.0.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "jest-environment-jsdom": "29.7.0",
