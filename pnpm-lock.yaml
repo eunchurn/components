@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@vitest/coverage-v8':
         specifier: ^3.0.0
-        version: 3.2.3(vitest@3.2.0(@types/node@22.15.32)(jiti@1.21.6)(jsdom@20.0.3)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)(terser@5.31.6)(yaml@2.6.1))
+        version: 3.2.4(vitest@3.2.0(@types/node@22.15.32)(jiti@1.21.6)(jsdom@20.0.3)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)(terser@5.31.6)(yaml@2.6.1))
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.7
@@ -2519,11 +2519,11 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
 
-  '@vitest/coverage-v8@3.2.3':
-    resolution: {integrity: sha512-D1QKzngg8PcDoCE8FHSZhREDuEy+zcKmMiMafYse41RZpBE5EDJyKOTdqK3RQfsV2S2nyKor5KCs8PyPRFqKPg==}
+  '@vitest/coverage-v8@3.2.4':
+    resolution: {integrity: sha512-EyF9SXU6kS5Ku/U82E259WSnvg6c8KTjppUncuNdm5QHpe17mwREHnjDzozC8x9MZ0xfBUFSaLkRv4TMA75ALQ==}
     peerDependencies:
-      '@vitest/browser': 3.2.3
-      vitest: 3.2.3
+      '@vitest/browser': 3.2.4
+      vitest: 3.2.4
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
@@ -9598,7 +9598,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@3.2.3(vitest@3.2.0(@types/node@22.15.32)(jiti@1.21.6)(jsdom@20.0.3)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)(terser@5.31.6)(yaml@2.6.1))':
+  '@vitest/coverage-v8@3.2.4(vitest@3.2.0(@types/node@22.15.32)(jiti@1.21.6)(jsdom@20.0.3)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)(terser@5.31.6)(yaml@2.6.1))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -13294,7 +13294,7 @@ snapshots:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.16.1
-      semver: 7.7.2
+      semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
