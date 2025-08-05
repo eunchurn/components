@@ -55,7 +55,7 @@
     "ts-node": "10.9.2",
     "tslib": "2.8.1",
     "tsup": "^8.2.4",
-    "typescript": "5.8.3",
+    "typescript": "5.9.2",
     "vitest": "^3.0.0"
   },
   "gitHead": "bec0f930f1ef420ae1ebaef6c074ff5d606ab1c7"
