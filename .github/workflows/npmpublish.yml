@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v2
       with:
-        version: 9
+        version: 10
     - name: Detect package manager
       id: detect-package-manager
       run: |
