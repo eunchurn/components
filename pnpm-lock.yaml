@@ -196,7 +196,7 @@ importers:
         version: 16.0.0
       jest-styled-components:
         specifier: 7.2.0
-        version: 7.2.0(styled-components@6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 7.2.0(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -457,7 +457,7 @@ importers:
         version: 5.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       styled-components:
         specifier: ^6.1.12
-        version: 6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/d3':
         specifier: 7.4.3
@@ -482,7 +482,7 @@ importers:
         version: 29.7.0
       jest-styled-components:
         specifier: 7.2.0
-        version: 7.2.0(styled-components@6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 7.2.0(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       standard-version:
         specifier: 9.5.0
         version: 9.5.0
@@ -946,9 +946,6 @@ packages:
 
   '@emotion/memoize@0.9.0':
     resolution: {integrity: sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ==}
-
-  '@emotion/unitless@0.10.0':
-    resolution: {integrity: sha512-dFoMUuQA20zvtVTuxZww6OHoJYgrzfKM1t52mVySDJnMSEa08ruEvdYQbhvyu6soU+NeLVd3yKfTfT0NeV6qGg==}
 
   '@esbuild/aix-ppc64@0.25.12':
     resolution: {integrity: sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA==}
@@ -2534,9 +2531,6 @@ packages:
 
   '@types/styled-components@5.1.36':
     resolution: {integrity: sha512-pGMRNY5G2rNDKEv2DOiFYa7Ft1r0jrhmgBwHhOMzPTgCjO76bCot0/4uEfqj7K0Jf1KdQmDtAuaDk9EAs9foSw==}
-
-  '@types/stylis@4.2.7':
-    resolution: {integrity: sha512-VgDNokpBoKF+wrdvhAAfS55OMQpL6QRglwTwNC3kIgBrzZxA4WsFj+2eLfEA/uMUDzBcEhYmjSbwQakn/i3ajA==}
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
@@ -6027,10 +6021,6 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.49:
-    resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.10:
     resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -6428,9 +6418,6 @@ packages:
     resolution: {integrity: sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==}
     engines: {node: '>=0.10.0'}
 
-  shallowequal@1.1.0:
-    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
-
   shebang-command@1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
     engines: {node: '>=0.10.0'}
@@ -6677,14 +6664,20 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  styled-components@6.3.12:
-    resolution: {integrity: sha512-hFR6xsVkVYbsdcUlzPYFvFfoc6o2KlV0VvgRIQwSYMtdThM7SCxnjX9efh/cWce2kTq16I/Kl3xM98xiLptsXA==}
+  styled-components@6.4.0:
+    resolution: {integrity: sha512-BL1EDFpt+q10eAeZB0q9ps6pSlPejaBQWBkiuM16pyoVTG4NhZrPrZK0cqNbrozxSsYwUsJ9SQYN6NyeKJYX9A==}
     engines: {node: '>= 16'}
     peerDependencies:
+      css-to-react-native: '>= 3.2.0'
       react: '>= 16.8.0'
       react-dom: '>= 16.8.0'
+      react-native: '>= 0.68.0'
     peerDependenciesMeta:
+      css-to-react-native:
+        optional: true
       react-dom:
+        optional: true
+      react-native:
         optional: true
 
   styled-jsx@5.1.1:
@@ -8144,8 +8137,6 @@ snapshots:
       '@emotion/memoize': 0.9.0
 
   '@emotion/memoize@0.9.0': {}
-
-  '@emotion/unitless@0.10.0': {}
 
   '@esbuild/aix-ppc64@0.25.12':
     optional: true
@@ -9623,8 +9614,6 @@ snapshots:
       '@types/react': 18.3.28
       csstype: 3.2.3
 
-  '@types/stylis@4.2.7': {}
-
   '@types/tough-cookie@4.0.5': {}
 
   '@types/uuid@9.0.8': {}
@@ -10599,7 +10588,8 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  camelize@1.0.1: {}
+  camelize@1.0.1:
+    optional: true
 
   caniuse-lite@1.0.30001776: {}
 
@@ -10934,13 +10924,15 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  css-color-keywords@1.0.0: {}
+  css-color-keywords@1.0.0:
+    optional: true
 
   css-to-react-native@3.2.0:
     dependencies:
       camelize: 1.0.1
       css-color-keywords: 1.0.0
       postcss-value-parser: 4.2.0
+    optional: true
 
   css.escape@1.5.1: {}
 
@@ -13010,10 +13002,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jest-styled-components@7.2.0(styled-components@6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  jest-styled-components@7.2.0(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@adobe/css-tools': 4.4.0
-      styled-components: 6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   jest-util@26.6.2:
     dependencies:
@@ -13881,12 +13873,6 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.49:
-    dependencies:
-      nanoid: 3.3.11
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
   postcss@8.5.10:
     dependencies:
       nanoid: 3.3.11
@@ -14349,8 +14335,6 @@ snapshots:
       is-plain-object: 2.0.4
       split-string: 3.1.0
 
-  shallowequal@1.1.0: {}
-
   shebang-command@1.2.0:
     dependencies:
       shebang-regex: 1.0.0
@@ -14647,19 +14631,14 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-components@6.3.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@emotion/is-prop-valid': 1.4.0
-      '@emotion/unitless': 0.10.0
-      '@types/stylis': 4.2.7
-      css-to-react-native: 3.2.0
       csstype: 3.2.3
-      postcss: 8.4.49
       react: 18.3.1
-      shallowequal: 1.1.0
       stylis: 4.3.6
-      tslib: 2.8.1
     optionalDependencies:
+      css-to-react-native: 3.2.0
       react-dom: 18.3.1(react@18.3.1)
 
   styled-jsx@5.1.1(@babel/core@7.29.0)(babel-plugin-macros@3.1.0)(react@18.3.1):
