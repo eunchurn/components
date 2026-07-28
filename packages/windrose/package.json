@@ -28,7 +28,7 @@
     "@types/styled-components": "5.1.36",
     "jest-environment-jsdom": "29.7.0",
     "jest-styled-components": "7.4.0",
-    "commit-and-tag-version": "9.5.0",
+    "commit-and-tag-version": "9.6.0",
     "ts-node": "10.9.2",
     "tsup": "^8.2.4",
     "typescript": "5.9.3"
