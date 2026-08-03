@@ -12,7 +12,7 @@
   "dependencies": {
     "@eunchurn/react-windrose": "workspace:*",
     "d3-force": "^3.0.0",
-    "next": "^14.2.3",
+    "next": "^16.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,7 +21,7 @@
     "@eunchurn/heatmap": "workspace:*",
     "@eunchurn/tailwind-config": "workspace:*",
     "@eunchurn/typescript-config": "workspace:*",
-    "@next/eslint-plugin-next": "^14.2.3",
+    "@next/eslint-plugin-next": "^16.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
