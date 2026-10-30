@@ -82,7 +82,7 @@
     "@types/node": "22.20.5",
     "@types/react": "18.3.31",
     "@types/react-dom": "18.3.7",
-    "@types/react-is": "19.2.0",
+    "@types/react-is": "19.3.0",
     "@vitejs/plugin-react-swc": "^4.0.0",
     "jest-environment-jsdom": "29.7.0",
     "react-is": "18.3.1",
