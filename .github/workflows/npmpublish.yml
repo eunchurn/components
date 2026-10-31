@@ -74,7 +74,7 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: Create Release Pull Request or Publish to npm
       id: changesets
-      uses: changesets/action@v1
+      uses: changesets/action@v2.1.2
       with:
         publish: ${{ steps.detect-package-manager.outputs.manager }} run release
         version: ${{ steps.detect-package-manager.outputs.manager }} run version
